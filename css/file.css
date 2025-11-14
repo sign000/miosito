@@ -1,3 +1,28 @@
+/* Definizioni dei font personalizzati */
+@font-face {
+    font-family: 'delight';
+    src: url('../fonts/delight-light.otf') format('opentype');
+    font-weight: lighter;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'delight';
+    src: url('../fonts/delight-extrabold.otf') format('opentype');
+    font-weight: bolder;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Thunder';
+    src: url('../fonts/Thunder-ExtraBoldLC.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Stili per l'immagine full-width */
 .img-fluid {
     max-width: 100%;
@@ -84,7 +109,7 @@ html {
 
 /* Stili per il testo principale */
 .thunder-text {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-weight: bolder;
     font-size: 6rem;
     margin-top: 1rem;
@@ -94,7 +119,7 @@ html {
 
 /* Stili per la biografia */
 .bio-text {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-weight: lighter;
     font-size: 1.2rem;
     line-height: 1.6;
@@ -105,7 +130,7 @@ html {
 
 /* Stili per "Progetti" */
 .progetti-text {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-weight: bolder;
     font-size: 3rem;
     margin-top: 2rem;
@@ -115,7 +140,7 @@ html {
 
 /* Stili per "Render Paraschiena" */
 .render-text {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-weight: lighter;
     font-size: 2.5rem;
     margin-top: 2rem;
@@ -125,7 +150,7 @@ html {
 
 /* Stili per il testo vite */
 .vite-text {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-weight: lighter;
     font-size: 2.5rem;
     margin-top: 1rem;
@@ -135,7 +160,7 @@ html {
 
 /* Stili per il testo puleggia */
 .puleggia-text {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-weight: lighter;
     font-size: 2.5rem;
     margin-top: 1rem;
@@ -145,7 +170,7 @@ html {
 
 /* Stili per il testo astoria */
 .astoria-text {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-weight: lighter;
     font-size: 2.5rem;
     margin-top: 13rem;
@@ -155,7 +180,7 @@ html {
 
 /* Stili per la descrizione del progetto */
 .progetto-descrizione {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-weight: lighter;
     font-size: 1.2rem;
     line-height: 1.6;
@@ -166,7 +191,7 @@ html {
 
 /* Stili per la descrizione della vite */
 .vite-descrizione {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-weight: lighter;
     font-size: 1.2rem;
     line-height: 1.6;
@@ -177,7 +202,7 @@ html {
 
 /* Stili per la descrizione della puleggia */
 .puleggia-descrizione {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-weight: lighter;
     font-size: 1.2rem;
     line-height: 1.6;
@@ -188,7 +213,7 @@ html {
 
 /* Stili per la descrizione del cinema Astoria */
 .astoria-descrizione {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-weight: lighter;
     font-size: 1.2rem;
     line-height: 1.6;
@@ -711,7 +736,7 @@ html {
 }
 
 .contatti-title {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-size: 2.5rem;
     font-weight: bold;
     color: #333333f6;
@@ -721,7 +746,7 @@ html {
 }
 
 .contatti-info {
-    font-family: 'delight';
+    font-family: 'delight', 'Arial', sans-serif;
     font-size: 1.3rem;
     color: #222;
     text-align: center;
