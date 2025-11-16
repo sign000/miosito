@@ -1,3 +1,564 @@
+
+/* Immagine fullwidth centrata e responsive */
+
+.img-fullwidth {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    display: block;
+    margin: 0 auto !important;
+    padding: 0;
+    object-fit: cover !important;
+    object-position: top !important;
+    height: 1800px !important;
+}
+
+@media (max-width: 1200px) {
+    .img-fullwidth {
+        height: 1400px !important;
+    }
+}
+@media (max-width: 900px) {
+    .img-fullwidth {
+        height: 1000px !important;
+    }
+}
+@media (max-width: 600px) {
+    .img-fullwidth {
+        height: 700px !important;
+    }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+html {
+    overflow-x: hidden;
+}
+
+/* ===========================
+   2. FONT DEFINITIONS
+   =========================== */
+@font-face {
+    font-family: 'delight';
+    src: url('../fonts/delight-light.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'delight';
+    src: url('../fonts/delight-light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'delight';
+    src: url('../fonts/delight-light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'delight';
+    src: url('../fonts/delight-extrabold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thunder';
+    src: url('../fonts/Thunder-ExtraBoldLC.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===========================
+   3. UTILITY CLASSES
+   =========================== */
+
+.puleggia-descrizione, .astoria-descrizione, .contatti-info {
+    font-weight: 300 !important;
+}
+.thunder-text {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: 800;
+    font-size: 6rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: #333333f6;
+}
+.bio-text {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 15px;
+    margin-bottom: 4rem;
+    color: #000000;
+}
+.progetti-text {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 15px;
+    color: #333333f6;
+}
+.render-text {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: lighter;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 15px;
+    color: #333333f6;
+}
+.vite-text {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: lighter;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 15px;
+    color: #333333f6;
+}
+.puleggia-text {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: lighter;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 15px;
+    color: #333333f6;
+}
+.astoria-text {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: lighter;
+    font-size: 2.5rem;
+    margin-top: 13rem;
+    margin-bottom: 15px;
+    color: #333333f6;
+}
+.progetto-descrizione {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 10px;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+.vite-descrizione {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 18px;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+.puleggia-descrizione {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 15px;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+.astoria-descrizione {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 15px;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+
+/* ===========================
+   5. FULL-WIDTH & LAYOUT
+   =========================== */
+.full-width-image {
+    display: block;
+    width: 100vw;
+    max-width: none;
+    height: 140vh;
+    object-fit: cover;
+    object-position: top;
+    margin: 0 0 2rem 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* Progetto Astoria: immagine che occupa sempre tutta la larghezza dello schermo */
+.progetto-fullwidth {
+    display: block;
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    object-fit: cover;
+    height: auto;
+    z-index: 2;
+}
+.container-fluid .row {
+    align-items: center;
+    min-height: auto;
+}
+body, html {
+    overflow-x: hidden;
+}
+
+/* ===========================
+   6. CONTACT SECTION
+   =========================== */
+.contatti-section {
+    background: linear-gradient(90deg, #f3f3f3 0%, #e0e0e0 100%);
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2.5rem 1.5rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contatti-title {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #333333f6;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.contatti-info {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-size: 1.3rem;
+    color: #222;
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 0.5rem;
+}
+.contact-bottom {
+    color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    font-family: 'delight', 'Arial', sans-serif; /* match thunder-text font-family */
+    font-size: 6rem; /* same as .thunder-text */
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    width: 100%;
+    display: block;
+    margin: 8rem auto 1rem auto; /* sposta la scritta più in basso rispetto al contenuto precedente */
+}
+
+/* Match .thunder-text responsive sizes exactly */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contact-bottom { font-size: 4.5rem !important; }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+    .contact-bottom { font-size: 3.5rem !important; }
+}
+@media (max-width: 480px) {
+    .contact-bottom { font-size: 2.5rem !important; }
+}
+
+@media (max-width: 600px) {
+    .contact-bottom {
+        font-size: 60px;
+        margin: 1rem auto 2rem auto;
+    }
+}
+
+/* Rettangolo personalizzato che occupa 10 colonne su 12 */
+.custom-rectangle {
+    border-radius: 75px;
+    background: rgba(202, 202, 202, 0.35);
+    width: 100%;
+    min-height: 28vw;
+    box-sizing: border-box;
+    padding: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 2rem 0; /* spazio sopra ridotto ma positivo, così il rettangolo scende insieme al contact */
+    transition: min-height 0.3s, padding 0.3s, margin 0.2s;
+}
+
+@media (max-width: 1200px) {
+    .custom-rectangle {
+        min-height: 36vw;
+        padding: 3vw;
+    }
+}
+@media (max-width: 900px) {
+    .custom-rectangle {
+        min-height: 44vw;
+        padding: 4vw;
+    }
+}
+@media (max-width: 600px) {
+    .custom-rectangle {
+        min-height: 60vw;
+        padding: 6vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .custom-rectangle {
+        min-height: 160px;
+        padding: 1rem;
+        margin: 0.8rem 0 1rem 0; /* margine positivo su mobile */
+    }
+    .contact-bottom { margin-bottom: 0.5rem; }
+}
+/* (Cleaned duplicate/old rules for .contact-bottom removed) */
+
+/* ===========================
+   7. ASTORIA & RECTANGLE IMAGES
+   =========================== */
+.rectangle-5 {
+    width: 45vw;
+    height: auto;
+    margin: 0;
+    display: block;
+    max-width: 1450px;
+    min-width: 300px;
+    flex-shrink: 0;
+    position: absolute;
+    right: calc(8.33% + 15px);
+    top: 20%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.astoria-image-2 {
+    width: 43vw;
+    height: auto;
+    max-width: 1650px;
+    min-width: 280px;
+    position: absolute;
+    top: 50vh;
+    left: calc(8.33% + 15px);
+    transform: translate(0%, 0%);
+    z-index: 11;
+}
+.astoria-image {
+    width: 35vw;
+    height: auto;
+    max-width: 1200px;
+    min-width: 250px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 50vh;
+    right: calc(8.33% + 15px);
+    transform: translate(0%, 0%);
+    z-index: 11;
+}
+
+/* ===========================
+   8. RECTANGLE & LOGO TOP
+   =========================== */
+.top-rectangle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 999;
+}
+.rectangle-svg {
+    width: 100%;
+    height: 40px;
+    display: block;
+    object-fit: cover;
+}
+.logo-as {
+    position: fixed;
+    top: 8px;
+    left: 15px;
+    z-index: 1000;
+}
+.as-svg {
+    width: 25px;
+    height: 25px;
+}
+.menu-icon {
+    position: fixed;
+    top: 8px;
+    right: 5px;
+    z-index: 1000;
+}
+.menu-svg {
+    width: 25px;
+    height: 25px;
+}
+
+/* ===========================
+   9. RECTANGLE GREY & FULLWIDTH
+   =========================== */
+.rettangolo-grigio {
+    background-color: #d3d3d3;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 20px;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.astoria-text-inline {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: lighter;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 15px;
+    color: #333333f6;
+    margin: 0 0 10px 0;
+}
+.astoria-descrizione-inline {
+    font-family: 'delight', 'Arial', sans-serif;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 15px;
+    margin-bottom: 2rem;
+    color: #000000;
+    margin: 0;
+}
+
+/* ===========================
+   11. IMMAGINI SOVRAPPOSTE
+   =========================== */
+.immagine-sovrapposta {
+    max-width: 150%;
+    max-height: 150%;
+    object-fit: contain;
+    border-radius: 10px;
+    position: static;
+    z-index: 10;
+}
+.paraschiena-section .immagine-sovrapposta {
+    position: absolute !important;
+    top: -45% !important;
+}
+.vite-section .immagine-sovrapposta {
+    position: absolute !important;
+    top: 40% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+.nuovo-rettangolo-section .immagine-sovrapposta {
+    position: absolute !important;
+    top: 40% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* ===========================
+   12. ASTORIA IMAGES RESPONSIVE
+   =========================== */
+.contact-img-astoriaaa,
+.contact-img-astoriaaaa {
+    max-width: 80%;
+    height: auto;
+    position: absolute;
+    
+}
+
+/* ===========================
+   13. MEDIA QUERIES
+   =========================== */
+
+/* --- Rectangle 5, Astoria, Text Block --- */
+@media (max-width: 1200px) {
+    .rectangle-5 { top: 35%; }
+    .astoria-image { top: 50vh; }
+    .astoria-image-2 { top: 50vh; }
+    .astoria-text-block { top: 10vh; }
+}
+
+/* --- Astoria Images Responsive --- */
+@media (max-width: 900px) {
+    .contact-img-astoriaaa,
+    .contact-img-astoriaaaa {
+        max-width: 40%;
+        left: 10%;
+        top: 75%;
+    }
+}
+@media (max-width: 600px) {
+    .contact-img-astoriaaa,
+    .contact-img-astoriaaaa {
+        max-width: 25%;
+        left: 5%;
+        top: 80%;
+    }
+}
+
+/* --- Astoria Text Block Responsive --- */
+@media (max-width: 900px) {
+    .astoria-text-block {
+        top: -20vh;
+        width: 50%;
+        max-width: 400px;
+    }
+}
+@media (max-width: 768px) {
+    .astoria-text-block {
+        top: -25vh;
+        width: 60%;
+        max-width: 350px;
+    }
+    .astoria-text-inline { font-size: 2rem; }
+}
+@media (max-width: 600px) {
+    .astoria-text-block {
+        top: -30vh;
+        width: 70%;
+        max-width: 300px;
+    }
+    .astoria-text-inline { font-size: 1.8rem; }
+    .astoria-descrizione-inline { font-size: 1rem; line-height: 1.4; }
+}
+@media (max-width: 480px) {
+    .astoria-text-block {
+        top: -35vh;
+        width: 80%;
+        max-width: 250px;
+    }
+    .astoria-text-inline { font-size: 1.5rem; margin-bottom: 5px; }
+    .astoria-descrizione-inline { font-size: 0.9rem; line-height: 1.3; }
+}
+
+/* --- Rectangle SVG Responsive --- */
+@media (min-width: 480px) { .rectangle-svg { height: 45px; } }
+@media (min-width: 768px) { .rectangle-svg { height: 50px; } }
+@media (min-width: 1024px) { .rectangle-svg { height: 55px; } }
+@media (min-width: 1200px) { .rectangle-svg { height: 60px; } }
+
+/* --- Logo AS Responsive --- */
+@media (min-width: 480px) { .as-svg { width: 28px; height: 28px; } }
+@media (min-width: 768px) { .logo-as { top: 10px; } .as-svg { width: 32px; height: 32px; } }
+@media (min-width: 1024px) { .logo-as { top: 12px; } .as-svg { width: 35px; height: 35px; } }
+@media (min-width: 1200px) { .logo-as { top: 15px; } .as-svg { width: 38px; height: 38px; } }
+
+/* --- Menu Icon Responsive --- */
+@media (min-width: 480px) { .menu-svg { width: 28px; height: 28px; } }
+@media (min-width: 768px) { .menu-icon { top: 10px; right: 25px; } .menu-svg { width: 32px; height: 32px; } }
+@media (min-width: 1024px) { .menu-icon { top: 12px; right: 40px; } .menu-svg { width: 35px; height: 35px; } }
+@media (min-width: 1200px) { .menu-icon { top: 15px; right: 45px; } .menu-svg { width: 38px; height: 38px; } }
+
+/* --- Rettangolo Fullwidth Responsive --- */
 @media (min-width: 992px) {
     .rettangolo-fullwidth {
         min-height: 120px;
@@ -6,9 +567,7 @@
     }
 }
 @media (max-width: 768px) {
-        .rettangolo-fullwidth {
-            height: 00px !important;
-        }
+    .rettangolo-fullwidth { height: 00px !important; }
     .astoria-images-block {
         display: flex !important;
         flex-direction: column !important;
@@ -46,1025 +605,164 @@
         z-index: auto !important;
     }
 }
-/* Stili di base per le immagini astoriaaa e astoriaaaa */
-.contact-img-astoriaaa,
-.contact-img-astoriaaaa {
-    max-width: 80%;
-    height: auto;
-    position: absolute;
-    /* Puoi regolare top/left secondo la tua disposizione */
-}
 
-/* Versione tablet (max-width: 900px) */
-@media (max-width: 900px) {
-    .contact-img-astoriaaa,
-    .contact-img-astoriaaaa {
-        max-width: 40%;
-        left: 10%;
-        top: 75%;
-    }
-}
+/* --- Rettangolo Fullwidth Height Responsive --- */
+@media (min-width: 1024px) and (max-width: 1400px) { .rettangolo-fullwidth { height: 500px; } }
+@media (min-width: 769px) and (max-width: 1023px) { .rettangolo-fullwidth { height: 400px; } }
+@media (min-width: 481px) and (max-width: 768px) { .rettangolo-fullwidth { height: 300px; } }
+@media (max-width: 480px) { .rettangolo-fullwidth { height: 200px; } }
 
-/* Versione smartphone (max-width: 600px) */
-@media (max-width: 600px) {
-    .contact-img-astoriaaa,
-    .contact-img-astoriaaaa {
-        max-width: 25%;
-        left: 5%;
-        top: 80%;
-    }
-}
-/* Definizioni dei font personalizzati */
-@font-face {
-    font-family: 'delight';
-    src: url('../fonts/delight-light.otf') format('opentype');
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'delight';
-    src: url('../fonts/delight-light.otf') format('opentype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'delight';
-    src: url('../fonts/delight-light.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'delight';
-    src: url('../fonts/delight-extrabold.otf') format('opentype');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Thunder';
-    src: url('../fonts/Thunder-ExtraBoldLC.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Forza solo le descrizioni ad usare il peso light */
-.bio-text, .progetto-descrizione, .vite-descrizione, 
-.puleggia-descrizione, .astoria-descrizione, .contatti-info {
-    font-weight: 300 !important;
-}
-
-/* Stili per l'immagine full-width */
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-}
-
-.w-100 {
-    width: 100% !important;
-}
-
-/* Rimuovi padding dai container per full-width */
-.container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-/* Assicurati che non ci siano margini indesiderati */
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-html {
-    overflow-x: hidden;
-}
-
-/* Stili aggiuntivi per l'immagine */
-.full-width-image {
-    display: block;
-    width: 100vw;
-    max-width: none;
-    height: 140vh;
-    object-fit: cover;
-    object-position: top;
-    margin: 0 0 2rem 0;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
-/* Ridimensionamento immagine per tablet grandi */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .full-width-image {
-        height: 90vh; /* Maggiormente ridotta in altezza per tablet grandi */
-        margin-bottom: 1.5rem; /* Ridotto margine sotto immagine */
-    }
-    
-    .thunder-text {
-        margin-top: 0.5rem; /* Ridotto margine sopra titolo */
-    }
-}
-
-/* Ridimensionamento immagine per tablet piccoli (480px - 769px) */
-@media (min-width: 480px) and (max-width: 768px) {
-    .full-width-image {
-        width: 100vw; /* Mantiene larghezza completa */
-        height: 80vh; /* Ridotta in altezza per tablet piccoli */
-        margin-left: -50vw; /* Margini originali per full-width */
-        margin-right: -50vw; /* Margini originali per full-width */
-        margin-bottom: 1rem; /* Ridotto margine sotto immagine */
-    }
-    
-    .thunder-text {
-        margin-top: 0.5rem; /* Ridotto margine sopra titolo */
-    }
-}
-
-@media (max-width: 480px) {
-    .full-width-image {
-        width: 100vw; /* Mantiene larghezza completa */
-        height: 60vh; /* Molto più ridotta in altezza per mobile */
-        margin-left: -50vw; /* Margini originali per full-width */
-        margin-right: -50vw; /* Margini originali per full-width */
-        margin-bottom: 0.5rem; /* Margine molto ridotto sotto immagine */
-    }
-    
-    .thunder-text {
-        margin-top: 0.5rem; /* Margine ridotto sopra titolo */
-    }
-}
-
-/* Stili per il testo principale */
-.thunder-text {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: 800;
-    font-size: 6rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    color: #333333f6;
-}
-
-/* Stili per la biografia */
-.bio-text {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-top: 15px;
-    margin-bottom: 4rem;
-    color: #000000;
-}
-
-/* Stili per "Progetti" */
-.progetti-text {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: 800;
-    font-size: 3rem;
-    margin-top: 2rem;
-    margin-bottom: 15px;
-    color: #333333f6;
-}
-
-/* Stili per "Render Paraschiena" */
-.render-text {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 2.5rem;
-    margin-top: 2rem;
-    margin-bottom: 15px;
-    color: #333333f6;
-}
-
-/* Stili per il testo vite */
-.vite-text {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 2.5rem;
-    margin-top: 1rem;
-    margin-bottom: 15px;
-    color: #333333f6;
-}
-
-/* Stili per il testo puleggia */
-.puleggia-text {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 2.5rem;
-    margin-top: 1rem;
-    margin-bottom: 15px;
-    color: #333333f6;
-}
-
-/* Stili per il testo astoria */
-.astoria-text {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 2.5rem;
-    margin-top: 13rem;
-    margin-bottom: 15px;
-    color: #333333f6;
-}
-
-/* Stili per la descrizione del progetto */
-.progetto-descrizione {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-top: 10px;
-    margin-bottom: 2rem;
-    color: #000000;
-}
-
-/* Stili per la descrizione della vite */
-.vite-descrizione {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-top: 18px;
-    margin-bottom: 2rem;
-    color: #000000;
-}
-
-/* Stili per la descrizione della puleggia */
-.puleggia-descrizione {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-top: 15px;
-    margin-bottom: 2rem;
-    color: #000000;
-}
-
-/* Stili per la descrizione del cinema Astoria */
-.astoria-descrizione {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-top: 15px;
-    margin-bottom: 2rem;
-    color: #000000;
-}
-
-/* RESPONSIVE TYPOGRAPHY - Media Queries per ridimensionare i testi */
-
-/* Tablet grandi (769px - 1024px) - Riduzione moderata */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .thunder-text {
-        font-size: 4.5rem !important; /* Da 6rem a 4.5rem */
-    }
-    
-    .progetti-text, .vite-text, .render-text, .puleggia-text, .astoria-text {
-        font-size: 2.2rem !important; /* Da 2.5rem a 2.2rem */
-    }
-    
-    .bio-text, .progetto-descrizione, .vite-descrizione, .puleggia-descrizione, .astoria-descrizione {
-        font-size: 1.1rem !important; /* Da 1.2rem a 1.1rem */
-    }
-    
-    /* Forza anche per selettore specifico */
-    .vite-section .vite-descrizione {
-        font-size: 1.1rem !important;
-    }
-}
-
-/* Tablet piccoli (480px - 768px) - Riduzione significativa */
-@media (min-width: 480px) and (max-width: 768px) {
-    .thunder-text {
-        font-size: 3.5rem !important; /* Da 6rem a 3.5rem */
-    }
-    
-    .progetti-text, .vite-text, .render-text, .puleggia-text, .astoria-text {
-        font-size: 1.8rem !important; /* Da 2.5rem a 1.8rem */
-    }
-    
-    .bio-text, .progetto-descrizione, .vite-descrizione, .puleggia-descrizione, .astoria-descrizione {
-        font-size: 1rem !important; /* Da 1.2rem a 1rem */
-    }
-    
-    /* Forza anche per selettore specifico */
-    .vite-section .vite-descrizione {
-        font-size: 1rem !important;
-    }
-}
-
-/* Mobile (fino a 480px) - Riduzione massima */
-@media (max-width: 480px) {
-    .thunder-text {
-        font-size: 2.5rem !important; /* Da 6rem a 2.5rem */
-    }
-    
-    .progetti-text, .vite-text, .render-text, .puleggia-text, .astoria-text {
-        font-size: 1.3rem !important; /* Da 2.5rem a 1.3rem */
-    }
-    
-    .bio-text, .progetto-descrizione, .vite-descrizione, .puleggia-descrizione, .astoria-descrizione {
-        font-size: 0.9rem !important; /* Da 1.2rem a 0.9rem */
-    }
-    
-    /* Forza anche per selettore specifico */
-    .vite-section .vite-descrizione {
-        font-size: 0.9rem !important;
-    }
-}
-
-/* DESKTOP GRANDI - Distanza FISSA in pixel */
-@media (min-width: 1024px) {
-    .progetto-descrizione {
-        margin-top: 9px !important;
-    }
-    
-    .vite-descrizione {
-        margin-top: 9px !important;
-        font-family: 'delight' !important;
-        font-weight: lighter !important;
-    }
-    
-    .render-text {
-        margin-bottom: 0.1rem !important;
-    }
-    
-    .vite-text {
-        margin-bottom: 0.1rem !important;
-    }
-}
-
-/* Tablet/Desktop piccoli (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .progetto-descrizione {
-        margin-top: -0.8rem !important;
-    }
-    
-    .vite-descrizione {
-        margin-top: -0.8rem !important;
-        font-family: 'delight' !important;
-        font-weight: lighter !important;
-    }
-    
-    .render-text {
-        margin-bottom: 0.1rem !important;
-    }
-    
-    .vite-text {
-        margin-bottom: 0.1rem !important;
-    }
-}
-
-/* Distanza proporzionale per tablet */
-@media (max-width: 768px) {
-    .progetto-descrizione {
-        margin-top: -1rem;
-    }
-    
-    /* Assicura che la descrizione vite abbia le dimensioni responsive su tablet piccoli */
-    .vite-section .vite-descrizione {
-        font-family: 'delight' !important;
-        font-weight: lighter !important;
-        line-height: 1.6 !important;
-        margin-top: -1rem !important;
-        margin-bottom: 2rem !important;
-        color: #000000 !important;
-    }
-}
-
-/* Distanza proporzionale per mobile */
-@media (max-width: 480px) {
-    .progetto-descrizione {
-        margin-top: -1rem;
-    }
-    
-    /* Permette alla descrizione vite di usare le dimensioni responsive su mobile */
-    .vite-section .vite-descrizione {
-        font-family: 'delight' !important;
-        font-weight: lighter !important;
-        line-height: 1.6 !important;
-        margin-top: -1rem !important;
-        margin-bottom: 2rem !important;
-        color: #000000 !important;
-    }
-}
-
-/* Stili per il rettangolo grigio */
-.rettangolo-grigio {
-    background-color: #d3d3d3;
-    width: 100%;
-    aspect-ratio: 16/9;
-    border-radius: 20px;
-    margin-top: 8rem;
-    margin-bottom: 2rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-}
-
-/* Allineamento verticale del layout da 768px in su */
-@media (min-width: 768px) {
-    .rettangolo-grigio {
-        margin-top: 0rem;
-        margin-bottom: 0rem;
-    }
-    
-    /* La riga Bootstrap deve allineare verticalmente i suoi elementi */
-    .container-fluid .row {
-        align-items: center;
-        min-height: auto;
-    }
-    
-    /* Rimuovo il posizionamento relativo dalla descrizione */
-    .progetto-descrizione {
-        position: static;
-        font-family: 'delight' !important;
-        font-weight: lighter !important;
-    }
-    
-    /* Assicurarsi che la sezione paraschiena mantenga l'allineamento originale */
-    .paraschiena-section .rettangolo-grigio {
-        top: 0; /* Reset any positioning adjustments */
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-    
-    /* Mantenere l'immagine del paraschiena nella posizione originale */
-    .paraschiena-section .immagine-sovrapposta {
-        position: absolute;
-        top: -45%;
-    }
-}
-
-/* Sposta tutta la sezione vite più in basso - FUORI dalla media query per tutti i dispositivi */
-.vite-section {
-    margin-top: 13rem;
-}
-
-/* Sposta la nuova sezione rettangolo più in basso */
-.nuovo-rettangolo-section {
-    margin-top: 15rem;
-}
-
-/* Media query per desktop */
-@media (min-width: 768px) {
-    /* Allinea il testo della vite al centro del rettangolo */
-    .vite-section .row {
-        align-items: center;
-    }
-    
-    /* Sposta i testi della vite leggermente più in su */
-    .vite-section .vite-text,
-    .vite-section .vite-descrizione {
-        transform: translateY(-2rem);
-    }
-}
-
-/* Stili BASE per l'immagine sovrapposta - identici per entrambi i rettangoli */
-.immagine-sovrapposta {
-    max-width: 150%;
-    max-height: 150%;
-    object-fit: contain;
-    border-radius: 10px;
-    position: static;
-    z-index: 10;
-}
-
-/* Solo l'immagine del paraschiena mantiene il posizionamento specifico */
-.paraschiena-section .immagine-sovrapposta {
-    position: absolute !important;
-    top: -45% !important;
-}
-
-/* L'immagine della vite DEVE AVERE position absolute per non influenzare il rettangolo */
-.vite-section .immagine-sovrapposta {
-    position: absolute !important;
-    top: 40% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-}
-
-/* Solo l'immagine della vite diventa più grande sui desktop */
-@media (min-width: 1200px) {
-    .vite-section .immagine-sovrapposta {
-        max-width: 140% !important;
-        max-height: 140% !important;
-        width: 140% !important;
-    }
-}
-
-@media (min-width: 1024px) and (max-width: 1199px) {
-    .vite-section .immagine-sovrapposta {
-        max-width: 150% !important;
-        max-height: 150% !important;
-        width: 150% !important;
-    }
-}
-
-/* Anche su tablet la vite è più grande */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .vite-section .immagine-sovrapposta {
-        max-width: 140% !important;
-        max-height: 140% !important;
-        width: 140% !important;
-    }
-    
-    /* Aumenta distanza tra sottotitoli e descrizioni per tablet/desktop piccoli */
-    .render-text {
-        margin-bottom: 0.2rem !important; /* Spazio ridotto sotto "Render Paraschiena" */
-    }
-    
-    .vite-text {
-        margin-bottom: 0.2rem !important; /* Spazio ridotto sotto "Vite a testa cilindrica" */
-    }
-    
-    .progetto-descrizione {
-        margin-top: 0.7rem !important; /* Spazio ridotto sopra descrizione paraschiena */
-    }
-    
-    .vite-descrizione {
-        margin-top: 0.7rem !important; /* Spazio ridotto sopra descrizione vite */
-    }
-}
-
-/* Su mobile la vite è uguale al paraschiena */
-@media (max-width: 767px) {
-    .vite-section .immagine-sovrapposta {
-        max-width: 130% !important;
-        max-height: 130% !important;
-        width: 130% !important;
-    }
-}
-
-/* L'immagine della puleggia DEVE AVERE position absolute per non influenzare il rettangolo */
-.nuovo-rettangolo-section .immagine-sovrapposta {
-    position: absolute !important;
-    top: 40% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-}
-
-/* Solo l'immagine della puleggia diventa più grande sui desktop */
-@media (min-width: 1200px) {
-    .nuovo-rettangolo-section .immagine-sovrapposta {
-        max-width: 140% !important;
-        max-height: 140% !important;
-        width: 140% !important;
-    }
-}
-
-@media (min-width: 1024px) and (max-width: 1199px) {
-    .nuovo-rettangolo-section .immagine-sovrapposta {
-        max-width: 150% !important;
-        max-height: 150% !important;
-        width: 150% !important;
-    }
-}
-
-/* Anche su tablet la puleggia è più grande */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .nuovo-rettangolo-section .immagine-sovrapposta {
-        max-width: 140% !important;
-        max-height: 140% !important;
-        width: 140% !important;
-    }
-}
-
-/* Su mobile la puleggia è uguale al paraschiena */
-@media (max-width: 767px) {
-    .nuovo-rettangolo-section .immagine-sovrapposta {
-        max-width: 130% !important;
-        max-height: 130% !important;
-        width: 130% !important;
-    }
-}
-
-/* Stili per Rectangle 9 in alto */
-.top-rectangle {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 999;
-}
-
-.rectangle-svg {
-    width: 100%;
-    height: 40px; /* Altezza ridotta per mobile */
-    display: block;
-    object-fit: cover; /* Mantiene le proporzioni */
-}
-
-/* Media queries per Rectangle 9 - dimensioni fisse per breakpoint */
-@media (min-width: 480px) {
-    .rectangle-svg {
-        height: 45px; /* Altezza ridotta per mobile grande */
-    }
-}
-
-@media (min-width: 768px) {
-    .rectangle-svg {
-        height: 50px; /* Altezza ridotta per tablet */
-    }
-}
-
-@media (min-width: 1024px) {
-    .rectangle-svg {
-        height: 55px; /* Altezza ridotta per desktop */
-    }
-}
-
-@media (min-width: 1200px) {
-    .rectangle-svg {
-        height: 60px; /* Altezza ridotta per desktop grandi */
-    }
-}
-
-/* Stili per il logo AS in alto a sinistra - dimensioni fisse per breakpoint */
-.logo-as {
-    position: fixed;
-    top: 8px; /* Centrato nel Rectangle 9 ridotto */
-    left: 15px;
-    z-index: 1000;
-}
-
-.as-svg {
-    width: 25px; /* Dimensione fissa per mobile */
-    height: 25px; /* Dimensione fissa quadrata */
-}
-
-/* Media queries per icona AS - dimensioni fisse per breakpoint */
-@media (min-width: 480px) {
-    .as-svg {
-        width: 28px;
-        height: 28px;
-    }
-}
-
-@media (min-width: 768px) {
-    .logo-as {
-        top: 10px; /* Aggiustato per Rectangle 9 più alto */
-    }
-    
-    .as-svg {
-        width: 32px;
-        height: 32px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .logo-as {
-        top: 12px;
-    }
-    
-    .as-svg {
-        width: 35px;
-        height: 35px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .logo-as {
-        top: 15px;
-    }
-    
-    .as-svg {
-        width: 38px;
-        height: 38px;
-    }
-}
-
-/* Stili per l'icona menu in alto a destra - dimensioni fisse per breakpoint */
-.menu-icon {
-    position: fixed;
-    top: 8px; /* Stesso top dell'AS per allineamento */
-    right: 5px; /* Spostato ancora più a destra */
-    z-index: 1000;
-}
-
-.menu-svg {
-    width: 25px; /* Dimensione fissa per mobile */
-    height: 25px; /* Dimensione fissa quadrata */
-}
-
-/* Media queries per icona menu - dimensioni fisse per breakpoint */
-@media (min-width: 480px) {
-    .menu-svg {
-        width: 28px;
-        height: 28px;
-    }
-}
-
-@media (min-width: 768px) {
-    .menu-icon {
-        top: 10px; /* Stesso top dell'icona AS */
-        right: 25px; /* Spostato ancora più a destra */
-    }
-    
-    .menu-svg {
-        width: 32px;
-        height: 32px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .menu-icon {
-        top: 12px;
-        right: 40px; /* Spostato ancora più a destra */
-    }
-    
-    .menu-svg {
-        width: 35px;
-        height: 35px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .menu-icon {
-        top: 15px;
-        right: 45px; /* Spostato ancora più a destra */
-    }
-    
-    .menu-svg {
-        width: 38px;
-        height: 38px;
-    }
-}
-
-/* Blocco testo Astoria nella stessa riga di Rectangle 5 */
-.astoria-text-block {
-    position: absolute;
-    top: 25vh;
-    left: calc(8.33% + 15px);
-    width: 40%;
-    max-width: 500px;
-    transform: translateY(-50%);
-    z-index: 13;
-}
-
-.astoria-text-inline {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 2.5rem;
-    margin-top: 1rem;
-    margin-bottom: 15px;
-    color: #333333f6;
-    margin: 0 0 10px 0;
-}
-
-.astoria-descrizione-inline {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-top: 15px;
-    margin-bottom: 2rem;
-    color: #000000;
-    margin: 0;
-}
-
-/* Media queries per il blocco testo responsive */
-@media (max-width: 1200px) {
-    .astoria-text-block {
-        top: -15vh;
-    }
-}
-
-@media (max-width: 900px) {
-    .astoria-text-block {
-        top: -20vh;
-        width: 50%;
-        max-width: 400px;
-    }
-}
-
-@media (max-width: 768px) {
-    .astoria-text-block {
-        top: -25vh;
-        width: 60%;
-        max-width: 350px;
-    }
-    
-    .astoria-text-inline {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .astoria-text-block {
-        top: -30vh;
-        width: 70%;
-        max-width: 300px;
-    }
-    
-    .astoria-text-inline {
-        font-size: 1.8rem;
-    }
-    
-    .astoria-descrizione-inline {
-        font-size: 1rem;
-        line-height: 1.4;
-    }
-}
-
-@media (max-width: 480px) {
-    .astoria-text-block {
-        top: -35vh;
-        width: 80%;
-        max-width: 250px;
-    }
-    
-    .astoria-text-inline {
-        font-size: 1.5rem;
-        margin-bottom: 5px;
-    }
-    
-    .astoria-descrizione-inline {
-        font-size: 0.9rem;
-        line-height: 1.3;
-    }
-}
-
-/* Rettangolo grigio full-width senza angoli arrotondati */
-.rettangolo-fullwidth {
-    background-color: rgba(217, 217, 217, 0.4);
-    width: 100vw;
-    min-height: 200px;
-    height: auto;
-    padding: 4rem 0;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-    position: relative;
-    left: 50%;
-    margin-left: -50vw;
-    border-radius: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-}
-
-/* Stili per la sezione contatti */
-.contatti-section {
-    background: linear-gradient(90deg, #f3f3f3 0%, #e0e0e0 100%);
-    border-radius: 20px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    padding: 2.5rem 1.5rem;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contatti-title {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #333333f6;
-    margin-bottom: 1.2rem;
-    text-align: center;
-    letter-spacing: 1px;
-}
-
-.contatti-info {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-size: 1.3rem;
-    color: #222;
-    text-align: center;
-    line-height: 2;
-    margin-bottom: 0.5rem;
-}
-
-.contatti-info a {
-    color: #0077b6;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.contatti-info a:hover {
-    color: #023e8a;
-    text-decoration: underline;
-}
-
-/* Responsive per la sezione contatti */
+/* --- Contact Section Responsive --- */
 @media (max-width: 768px) {
     .contatti-section {
         padding: 1.5rem 0.5rem;
         max-width: 95vw;
     }
-    .contatti-title {
-        font-size: 1.7rem;
-    }
-    .contatti-info {
-        font-size: 1rem;
-    }
-}
-    
-/* Media queries per rendere l'altezza responsive */
-/* Desktop medi (1024px - 1400px) */
-@media (min-width: 1024px) and (max-width: 1400px) {
-    .rettangolo-fullwidth {
-        height: 500px;
-    }
+    .contatti-title { font-size: 1.7rem; }
+    .contatti-info { font-size: 1rem; }
 }
 
-/* Tablet grandi (769px - 1023px) */
-@media (min-width: 769px) and (max-width: 1023px) {
-    .rettangolo-fullwidth {
-        height: 400px;
+/* --- Full-width Image Responsive --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .full-width-image {
+        height: 90vh;
+        margin-bottom: 1.5rem;
     }
+    .thunder-text { margin-top: 0.5rem; }
 }
-
-/* Tablet piccoli (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-    .rettangolo-fullwidth {
-        height: 300px;
+@media (min-width: 480px) and (max-width: 768px) {
+    .full-width-image {
+        width: 100vw;
+        height: 80vh;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-bottom: 1rem;
     }
+    .thunder-text { margin-top: 0.5rem; }
 }
-
-/* Mobile (fino a 480px) */
 @media (max-width: 480px) {
-    .rettangolo-fullwidth {
-        height: 200px;
+    .full-width-image {
+        width: 100vw;
+        height: 60vh;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-bottom: 0.5rem;
+    }
+    .thunder-text { margin-top: 0.5rem; }
+}
+
+/* --- Responsive Typography --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .thunder-text { font-size: 4.5rem !important; }
+    .progetti-text, .vite-text, .render-text, .puleggia-text, .astoria-text { font-size: 2.2rem !important; }
+    .bio-text, .progetto-descrizione, .vite-descrizione, .puleggia-descrizione, .astoria-descrizione { font-size: 1.1rem !important; }
+    .vite-section .vite-descrizione { font-size: 1.1rem !important; }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+    .thunder-text { font-size: 3.5rem !important; }
+    .progetti-text, .vite-text, .render-text, .puleggia-text, .astoria-text { font-size: 1.8rem !important; }
+    .bio-text, .progetto-descrizione, .vite-descrizione, .puleggia-descrizione, .astoria-descrizione { font-size: 1rem !important; }
+    .vite-section .vite-descrizione { font-size: 1rem !important; }
+}
+@media (max-width: 480px) {
+    .thunder-text { font-size: 2.5rem !important; }
+    .progetti-text, .vite-text, .render-text, .puleggia-text, .astoria-text { font-size: 1.3rem !important; }
+    .bio-text, .progetto-descrizione, .vite-descrizione, .puleggia-descrizione, .astoria-descrizione { font-size: 0.9rem !important; }
+    .vite-section .vite-descrizione { font-size: 0.9rem !important; }
+}
+
+/* --- Desktop grandi --- */
+@media (min-width: 1024px) {
+    .progetto-descrizione { margin-top: 9px !important; }
+    .vite-descrizione { margin-top: 9px !important; font-family: 'delight' !important; font-weight: lighter !important; }
+    .render-text { margin-bottom: 0.1rem !important; }
+    .vite-text { margin-bottom: 0.1rem !important; }
+}
+
+/* --- Tablet/Desktop piccoli --- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .progetto-descrizione { margin-top: -0.8rem !important; }
+    .vite-descrizione { margin-top: -0.8rem !important; font-family: 'delight' !important; font-weight: lighter !important; }
+    .render-text { margin-bottom: 0.1rem !important; }
+    .vite-text { margin-bottom: 0.1rem !important; }
+}
+
+/* --- Distanza proporzionale per tablet --- */
+@media (max-width: 768px) {
+    .progetto-descrizione { margin-top: -1rem; }
+    .vite-section .vite-descrizione {
+        font-family: 'delight' !important;
+        font-weight: lighter !important;
+        line-height: 1.6 !important;
+        margin-top: -1rem !important;
+        margin-bottom: 2rem !important;
+        color: #000000 !important;
     }
 }
 
-/* Stili per Rectangle 5 sovrapposta al rettangolo grigio */
-.rettangolo-fullwidth {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.rectangle-5 {
-    width: 45vw;
-    height: auto;
-    margin: 0;
-    display: block;
-    max-width: 1450px;
-    min-width: 300px;
-    flex-shrink: 0;
-    position: absolute;
-    right: calc(8.33% + 15px);
-    top: 20%;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-/* Stili per l'immagine Astoria sovrapposta */
-.astoria-image-2 {
-    width: 43vw;
-    height: auto;
-    max-width: 1650px;
-    min-width: 280px;
-    position: absolute;
-    top: 50vh;
-    left: calc(8.33% + 15px);;
-    transform: translate(0%, 0%);
-    z-index: 11;
-}
-
-/* Stili per l'immagine Astoria sovrapposta */
-.astoria-image {
-    width: 35vw;
-    height: auto;
-    max-width: 1200px;
-    min-width: 250px;
-    flex-shrink: 0;
-    position: absolute;
-    top: 50vh;
-    right: calc(8.33% + 15px);
-    transform: translate(0%, 0%);
-    z-index: 11;
-}
-
-/* Sotto i 1200px tutti gli elementi Astoria scorrono più in basso */
-@media (max-width: 1200px) {
-    .rectangle-5 {
-        top: 35%;
-    }
-    .astoria-image {
-        top: 50vh;
-    }
-    .astoria-image-2 {
-        top: 50vh;
-    }
-    .astoria-text-block {
-        top: 10vh;
+/* --- Distanza proporzionale per mobile --- */
+@media (max-width: 480px) {
+    .progetto-descrizione { margin-top: -1rem; }
+    .vite-section .vite-descrizione {
+        font-family: 'delight' !important;
+        font-weight: lighter !important;
+        line-height: 1.6 !important;
+        margin-top: -1rem !important;
+        margin-bottom: 2rem !important;
+        color: #000000 !important;
     }
 }
+
+/* --- Rettangolo grigio --- */
+@media (min-width: 768px) {
+    .rettangolo-grigio { margin-top: 0rem; margin-bottom: 0rem; }
+    .container-fluid .row { align-items: center; min-height: auto; }
+    .progetto-descrizione { position: static; font-family: 'delight' !important; font-weight: lighter !important; }
+    .paraschiena-section .rettangolo-grigio { top: 0; margin-top: 0; margin-bottom: 0; }
+    .paraschiena-section .immagine-sovrapposta { position: absolute; top: -45%; }
+}
+
+/* --- Sezioni verticali --- */
+.vite-section { margin-top: 13rem; }
+.nuovo-rettangolo-section { margin-top: 15rem; }
+
+/* --- Vite section allineamento --- */
+@media (min-width: 768px) {
+    .vite-section .row { align-items: center; }
+    .vite-section .vite-text, .vite-section .vite-descrizione { transform: translateY(-2rem); }
+}
+
+/* --- Immagine sovrapposta vite --- */
+@media (min-width: 1200px) {
+    .vite-section .immagine-sovrapposta { max-width: 140% !important; max-height: 140% !important; width: 140% !important; }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .vite-section .immagine-sovrapposta { max-width: 150% !important; max-height: 150% !important; width: 150% !important; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .vite-section .immagine-sovrapposta { max-width: 140% !important; max-height: 140% !important; width: 140% !important; }
+    .render-text { margin-bottom: 0.2rem !important; }
+    .vite-text { margin-bottom: 0.2rem !important; }
+    .progetto-descrizione { margin-top: 0.7rem !important; }
+    .vite-descrizione { margin-top: 0.7rem !important; }
+}
+@media (max-width: 767px) {
+    .vite-section .immagine-sovrapposta { max-width: 130% !important; max-height: 130% !important; width: 130% !important; }
+}
+
+/* --- Immagine sovrapposta puleggia --- */
+@media (min-width: 1200px) {
+    .nuovo-rettangolo-section .immagine-sovrapposta { max-width: 140% !important; max-height: 140% !important; width: 140% !important; }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .nuovo-rettangolo-section .immagine-sovrapposta { max-width: 150% !important; max-height: 150% !important; width: 150% !important; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .nuovo-rettangolo-section .immagine-sovrapposta { max-width: 140% !important; max-height: 140% !important; width: 140% !important; }
+}
+@media (max-width: 767px) {
+    .nuovo-rettangolo-section .immagine-sovrapposta { max-width: 130% !important; max-height: 130% !important; width: 130% !important; }
+}
+
 
 
