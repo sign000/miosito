@@ -13,158 +13,6 @@
     height: 1800px !important;
 }
 
-/* ===========================
-   SIMPLE GREY FOOTER (full-width rectangle)
-   =========================== */
-.site-footer {
-    background: #e6e6e6;
-    width: 100vw;
-    left: 50%;
-    margin-left: -50vw;
-    position: relative;
-    margin-top: 10rem; /* aumentato: sposta il footer più in basso */
-    padding: 5rem 0;   /* aumentato: footer più alto per contenuti (icone/testi) */
-    box-sizing: border-box;
-}
-.site-footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-.site-footer .footer-text {
-    margin: 0;
-    color: #333;
-    font-family: 'delight', Arial, sans-serif;
-    font-weight: 300; /* light */
-    font-size: 1rem;
-    text-align: left;
-}
-
-/* Left column layout: stack items vertically and align to left */
-.site-footer .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    width: 100%;
-    max-width: none; /* allow Bootstrap columns to control width */
-}
-.site-footer .footer-contact {
-    font-family: 'delight', Arial, sans-serif;
-    font-weight: 300;
-    font-size: clamp(0.95rem, 1.2vw + 0.6rem, 1.25rem);
-    margin: 0 0 0.6rem 0;
-}
-.site-footer .footer-email {
-    margin: 0 0 0.5rem 0;
-    font-family: 'delight', Arial, sans-serif;
-    font-weight: 300; /* light */
-    /* responsive size: allow smaller minimum on very narrow viewports */
-    font-size: clamp(0.85rem, 2.2vw + 0.2rem, 1.9rem);
-    color: #111;
-}
-.site-footer .footer-email a {
-    color: inherit;
-    text-decoration: none;
-    font-weight: 300;
-}
-.site-footer .footer-email a:hover {
-    text-decoration: underline;
-}
-
-/* Footer icons (vertical stack on the right) */
-.footer-icons {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(0.6rem, 1.2vw, 1.2rem);
-    align-items: flex-start; /* allineamento a sinistra per icone + etichette */
-}
-.footer-icon-wrap {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: clamp(0.4rem, 0.8vw, 0.8rem);
-}
-.footer-icon-wrap .icon-label {
-    font-family: 'delight', Arial, sans-serif;
-    font-weight: 300;
-    color: #333;
-    /* allow label text (email/phone) to scale smaller on tight viewports */
-    font-size: clamp(0.7rem, 1vw + 0.15rem, 1rem);
-}
-.footer-icons .footer-icon {
-    display: inline-flex;
-    width: clamp(34px, 4.2vw, 52px);
-    height: clamp(34px, 4.2vw, 52px);
-    min-width: 28px;
-    min-height: 28px;
-    align-items: center;
-    justify-content: center;
-    color: #333;
-    text-decoration: none;
-}
-.footer-icons .footer-icon:hover { color: #000; }
-.footer-icons svg { display: block; width: clamp(18px, 2.2vw, 28px); height: auto; }
-
-@media (max-width: 767px) {
-    /* keep icons vertical on small screens as well */
-    .footer-icons { flex-direction: column; gap: 1rem; justify-content: center; margin-top: 1rem; }
-    .col-md-1.d-none.d-md-block { display: none !important; }
-}
-
-/* Sposta la colonna icone più a sinistra sui dispositivi medi e superiori */
-@media (min-width: 768px) {
-    /* remove left padding on the icon column(s) so icons can sit flush */
-    .site-footer .col-md-3,
-    .site-footer .col-md-2 { padding-left: 0; }
-    .site-footer .footer-icons { margin-left: -1rem; }
-}
-
-/* On medium+ screens make icons and their labels larger */
-@media (min-width: 768px) {
-    .site-footer .footer-icons {
-        gap: 1.25rem; /* a bit more breathing room */
-    }
-    .site-footer .footer-icons .footer-icon {
-        width: 64px;
-        height: 64px;
-        min-width: 48px;
-        min-height: 48px;
-    }
-    .site-footer .footer-icons svg {
-        width: 36px; /* icon graphic larger */
-        height: auto;
-    }
-    .site-footer .footer-icon-wrap .icon-label {
-        font-size: 1.15rem; /* larger label text */
-    }
-    /* also increase the email in the left column a little on larger screens */
-    .site-footer .footer-email {
-        font-size: clamp(1.25rem, 1.8vw + 0.4rem, 2rem);
-    }
-}
-
-/* Smartphone-specific adjustments: rendi la mail e le etichette più piccole */
-@media (max-width: 480px) {
-    .site-footer .footer-email {
-        font-size: 0.75rem !important;
-    }
-    .footer-icon-wrap .icon-label {
-        font-size: 0.65rem !important;
-    }
-    .footer-icons .footer-icon {
-        width: 32px !important;
-        height: 32px !important;
-    }
-    .footer-icons svg { width: 16px !important; height: auto !important; }
-}
-
-@media (max-width: 767px) {
-    .site-footer { margin-top: 5rem; padding: 3rem 0; }
-    .site-footer .footer-text { font-size: 0.95rem; }
-    .site-footer .footer-email { font-size: 1.4rem; }
-}
-
 @media (max-width: 1200px) {
     .img-fullwidth {
         height: 1400px !important;
@@ -399,7 +247,36 @@ body, html {
     line-height: 2;
     margin-bottom: 0.5rem;
 }
-/* (Removed .contact-bottom and related responsive rules) */
+.contact-bottom {
+    color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    font-family: 'delight', 'Arial', sans-serif; /* match thunder-text font-family */
+    font-size: 6rem; /* same as .thunder-text */
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    width: 100%;
+    display: block;
+    margin: 8rem auto 1rem auto; /* sposta la scritta più in basso rispetto al contenuto precedente */
+}
+
+/* Match .thunder-text responsive sizes exactly */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contact-bottom { font-size: 4.5rem !important; }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+    .contact-bottom { font-size: 3.5rem !important; }
+}
+@media (max-width: 480px) {
+    .contact-bottom { font-size: 2.5rem !important; }
+}
+
+@media (max-width: 600px) {
+    .contact-bottom {
+        font-size: 60px;
+        margin: 1rem auto 2rem auto;
+    }
+}
 
 /* Rettangolo personalizzato che occupa 10 colonne su 12 */
 .custom-rectangle {
@@ -441,7 +318,9 @@ body, html {
         padding: 1rem;
         margin: 0.8rem 0 1rem 0; /* margine positivo su mobile */
     }
+    .contact-bottom { margin-bottom: 0.5rem; }
 }
+/* (Cleaned duplicate/old rules for .contact-bottom removed) */
 
 /* ===========================
    7. ASTORIA & RECTANGLE IMAGES
@@ -733,7 +612,9 @@ body, html {
 @media (min-width: 481px) and (max-width: 768px) { .rettangolo-fullwidth { height: 300px; } }
 @media (max-width: 480px) { .rettangolo-fullwidth { height: 200px; } }
 
+<<<<<<< Updated upstream
 /* --- Contact Section Responsive --- */
+=======
 /* Versione smartphone (max-width: 600px) */
 @media (max-width: 600px) {
     .contact-img-astoriaaa,
@@ -1319,9 +1200,6 @@ html {
     }
 }
 
-/* (contact rectangle cleaned up - rules removed) */
-
-
 /* Stili per Rectangle 9 in alto */
 .top-rectangle {
     position: fixed;
@@ -1632,6 +1510,7 @@ html {
 }
 
 /* Responsive per la sezione contatti */
+>>>>>>> Stashed changes
 @media (max-width: 768px) {
     .contatti-section {
         padding: 1.5rem 0.5rem;
@@ -1720,7 +1599,132 @@ html {
     }
 }
 
-/* (contact-related rules and conflict markers removed) */
+<<<<<<< Updated upstream
+/* --- Distanza proporzionale per mobile --- */
+@media (max-width: 480px) {
+    .progetto-descrizione { margin-top: -1rem; }
+    .vite-section .vite-descrizione {
+        font-family: 'delight' !important;
+        font-weight: lighter !important;
+        line-height: 1.6 !important;
+        margin-top: -1rem !important;
+        margin-bottom: 2rem !important;
+        color: #000000 !important;
+=======
+/* Regole per posizionare la scritta 'contact' poco sopra il footer */
+.contact-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* posiziona il contenuto in basso */
+    align-items: center;
+    min-height: 50vh !important;
+    padding-bottom: 0 !important; /* zero spazio tra testo e footer */
+}
+.contact-copy {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important; /* tocca il footer */
+    transform: none !important;
+}
+
+@media (max-width: 768px) {
+    .contact-row {
+        min-height: 45vh !important;
+        padding-bottom: 0 !important;
+    }
+    .contact-copy {
+        transform: none !important;
+        margin-bottom: 0 !important;
+        font-size: 2.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-row {
+        min-height: 35vh !important;
+        padding-bottom: 0 !important;
+    }
+    .contact-copy {
+        transform: none !important;
+        margin-bottom: 0 !important;
+        font-size: 2.2rem !important;
+        margin-top: 0 !important;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .contact-row {
+        min-height: 45vh !important;
+        padding-bottom: 0 !important;
+    }
+    .contact-copy {
+        transform: none !important;
+        margin-bottom: 0 !important;
+        font-size: 3rem !important;
+        margin-top: 0 !important;
+    }
+}
+
+/* Rettangolo grigio sotto la scritta contact */
+.contact-rectangle {
+    /* Footer-style centered block occupying the Bootstrap column */
+    width: 100%;
+    height: 360px; /* molto più alto per funzionare da footer */
+    background: #e6e6e6;
+    margin: 0 auto; /* verrà centrato dalla col-10 wrapper */
+    border-radius: 24px; /* angoli raccordati su tutti i lati */
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.06);
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .contact-rectangle {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-rectangle {
+        border-radius: 16px; /* leggermente meno arrotondato su tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-rectangle {
+        border-radius: 12px; /* arrotondamento ridotto su mobile */
+    }
+}
+
+/* Per schermi grandi (>768px) aumentiamo lo spazio prima del footer */
+@media (min-width: 769px) {
+    .contact-row {
+        padding-bottom: 3rem !important; /* spazio extra tra testo e footer */
+    }
+    .contact-rectangle {
+        margin-top: 2rem !important; /* ulteriore spinta verso il basso del footer */
+    }
+    /* Sposta l'intera sezione contact (testo + footer) più in basso */
+    .contact-section {
+        margin-top: 6rem !important;
+    }
+    /* Abbassa solo la scritta 'contact' mantenendo il footer in posizione */
+    .contact-copy {
+        transform: translateY(2.5rem) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-rectangle {
+        height: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-rectangle {
+        height: 200px;
+    }
+}
+
+/* Stili per Rectangle 5 sovrapposta al rettangolo grigio */
 .rettangolo-fullwidth {
     position: relative;
     display: flex;
@@ -1783,6 +1787,7 @@ html {
     }
     .astoria-text-block {
         top: 10vh;
+>>>>>>> Stashed changes
     }
 }
 
