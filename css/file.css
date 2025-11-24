@@ -487,19 +487,21 @@ body, html {
 .top-rectangle {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    z-index: 9999;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 100vw !important; /* force viewport-width full-bleed */
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    z-index: 9999 !important;
 }
 .rectangle-svg {
-    display: block;
-    width: 100%;
-    max-width: none;
-    height: 48px;
-    object-fit: cover;
+    display: block !important;
+    width: 100vw !important; /* ensure the SVG spans the full viewport */
+    max-width: none !important;
+    height: 48px !important;
+    object-fit: cover !important;
 }
 .logo-as {
     position: fixed;
