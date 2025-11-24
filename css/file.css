@@ -45,6 +45,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center; /* centra verticalmente i testi all'interno della colonna */
     text-align: left;
     width: 100%;
     max-width: none; /* allow Bootstrap columns to control width */
@@ -114,10 +115,16 @@
 
 /* Sposta la colonna icone più a sinistra sui dispositivi medi e superiori */
 @media (min-width: 768px) {
-    /* remove left padding on the icon column(s) so icons can sit flush */
-    .site-footer .col-md-3,
-    .site-footer .col-md-2 { padding-left: 0; }
-    .site-footer .footer-icons { margin-left: -1rem; }
+    .site-footer .col-md-3 { padding-left: 0; }
+    /* Sposta le icone ancora più a destra sui dispositivi medi e superiori */
+    .site-footer .footer-icons { margin-left: 8rem !important; }
+}
+
+/* Slightly shift footer icons left between 768px and 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+    .site-footer .footer-icons {
+        margin-left: 10rem !important; /* sposta ancora di più a destra sui tablet medi */
+    }
 }
 
 /* On medium+ screens make icons and their labels larger */
@@ -142,12 +149,28 @@
     .site-footer .footer-email {
         font-size: clamp(1.25rem, 1.8vw + 0.4rem, 2rem);
     }
+
+    /* Ensure the left column content sits at half the footer height
+       on medium and larger screens (vertical center). This makes the
+       texts appear at 50% of the footer's height regardless of its
+       exact pixel value (e.g. 40px -> texts at 20px). */
+    .site-footer .site-footer-inner {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    .site-footer .footer-content {
+        /* keep the internal column items centered vertically as well */
+        justify-content: center;
+    }
 }
 
 /* Smartphone-specific adjustments: rendi la mail e le etichette più piccole */
 @media (max-width: 480px) {
+    /* Mantieni gli stessi stili (font-family, weight, color) della versione più grande;
+       qui cambiamo solo la dimensione per schermi stretti */
     .site-footer .footer-email {
-        font-size: 0.75rem !important;
+        font-size: 0.95rem !important;
     }
     .footer-icon-wrap .icon-label {
         font-size: 0.65rem !important;
@@ -634,14 +657,13 @@ body, html {
         max-width: 400px;
     }
 }
-@media (max-width: 768px) {
-    .astoria-text-block {
-        top: -25vh;
-        width: 60%;
-        max-width: 350px;
-    }
-    .astoria-text-inline { font-size: 2rem; }
+@media (min-width: 768px) {
+    /* remove left padding on the icon/side columns so icons can sit flush */
+    .site-footer .col-2,
+    .site-footer .col-1 { padding-left: 0; }
+    .site-footer .footer-icons { margin-left: 8rem !important; }
 }
+    .astoria-text-inline { font-size: 2rem; }
 @media (max-width: 600px) {
     .astoria-text-block {
         top: -30vh;
@@ -1009,6 +1031,26 @@ html {
     .vite-section .vite-descrizione {
         font-size: 1.1rem !important;
     }
+}
+
+/* Match footer typography to project description responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .site-footer .footer-contact { font-size: 1.1rem !important; }
+    .site-footer .footer-email { font-size: 1.1rem !important; }
+    .footer-icon-wrap .icon-label { font-size: 1rem !important; }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .site-footer .footer-contact { font-size: 1rem !important; }
+    .site-footer .footer-email { font-size: 1rem !important; }
+    .footer-icon-wrap .icon-label { font-size: 0.95rem !important; }
+}
+
+@media (max-width: 480px) {
+    .site-footer .footer-contact { font-size: 0.9rem !important; }
+    /* keep other styles identical, only adjust size as requested */
+    .site-footer .footer-email { font-size: 0.9rem !important; }
+    .footer-icon-wrap .icon-label { font-size: 0.85rem !important; }
 }
 
 /* Tablet piccoli (480px - 768px) - Riduzione significativa */
