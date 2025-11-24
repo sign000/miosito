@@ -466,9 +466,6 @@ body, html {
     }
 }
 
-/* ===========================
-   7. ASTORIA & RECTANGLE IMAGES
-   =========================== */
 .rectangle-5 {
     width: 45vw;
     height: auto;
@@ -483,29 +480,6 @@ body, html {
     transform: translateY(-50%);
     z-index: 10;
 }
-.astoria-image-2 {
-    width: 43vw;
-    height: auto;
-    max-width: 1650px;
-    min-width: 280px;
-    position: absolute;
-    top: 50vh;
-    left: calc(8.33% + 15px);
-    transform: translate(0%, 0%);
-    z-index: 11;
-}
-.astoria-image {
-    width: 35vw;
-    height: auto;
-    max-width: 1200px;
-    min-width: 250px;
-    flex-shrink: 0;
-    position: absolute;
-    top: 50vh;
-    right: calc(8.33% + 15px);
-    transform: translate(0%, 0%);
-    z-index: 11;
-}
 
 /* ===========================
    8. RECTANGLE & LOGO TOP
@@ -514,13 +488,17 @@ body, html {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    z-index: 999;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 9999;
 }
 .rectangle-svg {
-    width: 100%;
-    height: 40px;
     display: block;
+    width: 100%;
+    max-width: none;
+    height: 48px;
     object-fit: cover;
 }
 .logo-as {
@@ -1762,9 +1740,7 @@ html {
     }
 }
 
-<<<<<<< Updated upstream
-/* (contact-related rules and conflict markers removed) */
-=======
+/* Regole per posizionare la scritta 'contact' poco sopra il footer */
 /* Regole per posizionare la scritta 'contact' poco sopra il footer */
 .contact-row {
     display: flex;
@@ -1879,7 +1855,6 @@ html {
 }
 
 /* Stili per Rectangle 5 sovrapposta al rettangolo grigio */
->>>>>>> Stashed changes
 .rettangolo-fullwidth {
     position: relative;
     display: flex;
