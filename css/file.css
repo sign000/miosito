@@ -1,4 +1,39 @@
 
+/* ======= Mobile overrides (force last) ======= */
+@media (max-width: 480px) {
+    /* Sposta più in basso l'immagine progettoastoria su mobile */
+    body .progetto-fullwidth {
+        margin-top: 6rem !important;
+    }
+    /* Sposta più in basso titolo e descrizione Identità Visiva Astoria */
+    body .astoria-text,
+    body .astoria-descrizione {
+        transform: translateY(5.5rem) !important;
+        margin-top: 0 !important;
+    }
+    /* Sposta in giù il rettangolo grigio della sezione paraschiena */
+    body .paraschiena-section .rettangolo-grigio {
+        margin-top: 3.5rem !important;
+    }
+    /* Forza la posizione mobile del render paraschiena in fondo al file per massima priorità */
+    body .paraschiena-section .immagine-sovrapposta {
+        top: -35% !important;
+    }
+    /* Abbassa leggermente l'immagine del render paraschiena su mobile */
+    .paraschiena-section .immagine-sovrapposta {
+        top: -35% !important;
+    }
+    /* Ensure the vite image is slightly lower than earlier rules */
+    body .vite-section .immagine-sovrapposta {
+        top: 30% !important;
+    }
+
+    /* Bring the grey rectangle closer to the content */
+    body .rettangolo-grigio {
+        margin-top: 2.5rem !important;
+    }
+}
+
 /* Immagine fullwidth centrata e responsive */
 
 .img-fullwidth {
@@ -618,6 +653,34 @@ body, html {
     position: absolute;
     
 }
+/* Reduce vertical gap between PROGETTI and following render text */
+.progetto-text.thunder-text {
+    margin-bottom: 0.15rem; /* tightened further per request */
+}
+
+.render-text {
+    margin-top: 0.05rem;
+}
+
+@media (min-width: 768px) {
+    .progetto-text.thunder-text {
+        margin-bottom: 0.45rem;
+    }
+    .render-text {
+        margin-top: 0.2rem;
+    }
+}
+
+/* Slightly shift PROGETTI left to align with 'Render Paraschiena' */
+.progetto-text.thunder-text {
+    margin-left: -0.25rem; /* nudge reduced to move slightly right */
+}
+
+@media (min-width: 768px) {
+    .progetto-text.thunder-text {
+        margin-left: -0.5rem; /* reduced desktop nudge */
+    }
+}
 
 /* ===========================
    13. MEDIA QUERIES
@@ -646,6 +709,26 @@ body, html {
         max-width: 25%;
         left: 5%;
         top: 80%;
+    }
+}
+
+/* Reduce vertical gap between Vite text and Paraschiena image on small screens */
+@media (max-width: 600px) {
+    .paraschiena-section .immagine-sovrapposta {
+        margin-bottom: 0.1rem !important;
+    }
+    .vite-section .vite-text {
+        margin-top: 0rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .paraschiena-section .immagine-sovrapposta {
+        margin-bottom: -0.15rem !important;
+    }
+    .vite-section .vite-text {
+        margin-top: -0.1rem !important;
+        font-size: 1.05rem !important; /* keep readability when moved closer */
     }
 }
 
@@ -1253,12 +1336,11 @@ html {
 }
 
 /* Solo l'immagine del paraschiena mantiene il posizionamento specifico */
+/* Solo l'immagine del paraschiena mantiene il posizionamento specifico */
 .paraschiena-section .immagine-sovrapposta {
     position: absolute !important;
     top: -45% !important;
 }
-
-/* L'immagine della vite DEVE AVERE position absolute per non influenzare il rettangolo */
 .vite-section .immagine-sovrapposta {
     position: absolute !important;
     top: 40% !important;
@@ -1762,35 +1844,6 @@ html {
     }
 }
 
-<<<<<<< Updated upstream
-/* (contact-related rules and conflict markers removed) */
-=======
-/* Regole per posizionare la scritta 'contact' poco sopra il footer */
-.contact-row {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* posiziona il contenuto in basso */
-    align-items: center;
-    min-height: 50vh !important;
-    padding-bottom: 0 !important; /* zero spazio tra testo e footer */
-}
-.contact-copy {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important; /* tocca il footer */
-    transform: none !important;
-}
-
-@media (max-width: 768px) {
-    .contact-row {
-        min-height: 45vh !important;
-        padding-bottom: 0 !important;
-    }
-    .contact-copy {
-        transform: none !important;
-        margin-bottom: 0 !important;
-        font-size: 2.5rem !important;
-    }
-}
 
 @media (max-width: 480px) {
     .contact-row {
@@ -1879,7 +1932,6 @@ html {
 }
 
 /* Stili per Rectangle 5 sovrapposta al rettangolo grigio */
->>>>>>> Stashed changes
 .rettangolo-fullwidth {
     position: relative;
     display: flex;
@@ -1956,6 +2008,12 @@ html {
 
 /* --- Sezioni verticali --- */
 .vite-section { margin-top: 13rem; }
+
+/* Aumenta lo spazio tra biografia e render su desktop grandi */
+@media (min-width: 1200px) {
+    .bio-text { margin-bottom: 8rem !important; }
+    .render-text { margin-top: 4rem !important; }
+}
 .nuovo-rettangolo-section { margin-top: 15rem; }
 
 /* --- Vite section allineamento --- */
@@ -1994,6 +2052,83 @@ html {
 }
 @media (max-width: 767px) {
     .nuovo-rettangolo-section .immagine-sovrapposta { max-width: 130% !important; max-height: 130% !important; width: 130% !important; }
+}
+
+/* ===========================
+   14. ASTORIA MOBILE ADJUSTMENTS
+   Move Astoria title + description + images up on small screens
+   Only affects viewports <= 767px
+   =========================== */
+@media (max-width: 767px) {
+    /* Move title/description block up */
+    .astoria-text,
+    .astoria-descrizione,
+    .astoria-text-block {
+        transform: translateY(3rem) !important; /* sposto il blocco ancora più in basso su mobile */
+        margin-top: 0 !important;
+    }
+
+    /* Raise Astoria images so layout stays aligned (keeps original proportions) */
+    .astoria-image,
+    .astoria-image-2,
+    .contact-img-astoriaaa,
+    .contact-img-astoriaaaa {
+        top: 72vh !important; /* abbasso ulteriormente le immagini su mobile */
+    }
+
+    /* Sposta più in su gli elementi della Puleggia Dentata su mobile */
+    /* Sposta gli elementi della Puleggia Dentata un po' più in giù su mobile */
+    .nuovo-rettangolo-section {
+        margin-top: 4rem !important; /* aumenta lo spazio sopra la sezione */
+    }
+
+    .nuovo-rettangolo-section .rettangolo-grigio {
+        margin-top: 3rem !important; /* allontana il rettangolo dai testi */
+    }
+
+    .nuovo-rettangolo-section .immagine-sovrapposta {
+        top: 40% !important; /* sposta l'immagine più in basso */
+        transform: translate(-50%, -50%) !important; /* centratura standard */
+    }
+
+    .puleggia-text,
+    .puleggia-descrizione {
+        transform: translateY(1.5rem) !important; /* sposta il testo verso il basso */
+    }
+
+    /* Forza l'immagine full-width del progetto Astoria più in basso su mobile */
+    .progetto-fullwidth {
+        margin-top: 4rem !important;
+    }
+}
+
+/* ===========================
+   VITE - Small screens adjustments
+   Move Vite title + description + image up on very small screens
+   Applies only to viewports <= 480px
+   =========================== */
+@media (max-width: 480px) {
+    /* Reduce the top spacing so the whole block moves up */
+    .vite-section {
+        margin-top: 8.5rem !important; /* leggero spostamento più in basso rispetto al valore precedente */
+    }
+
+    /* Adjust only the texts (title + description) to move them slightly down; image left unchanged */
+    .vite-section .vite-text,
+    .vite-section .vite-descrizione {
+        transform: translateY(0.6rem) !important; /* sposta il testo un pelo più in basso */
+        margin-top: 0 !important;
+    }
+
+    /* Move the image slightly up to match text */
+    .vite-section .immagine-sovrapposta {
+        top: 30% !important; /* sposto l'immagine più in giù sui piccoli schermi */
+        transform: translate(-50%, -50%) !important;
+    }
+    /* Avvicina il rettangolo grigio al contenuto su piccoli schermi */
+    .rettangolo-grigio {
+        margin-top: 2.5rem !important; /* più spazio sopra il rettangolo, lo sposta più in giù */
+    }
 }
 
 
