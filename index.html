@@ -19,8 +19,17 @@
     </div>
 
     <!-- Icona Menu in alto a destra -->
-    <div class="menu-icon">
+    <div class="menu-icon" role="button" tabindex="0" aria-label="Menu" id="menuIcon">
         <img src="svg/Risorsa 1.svg" alt="Menu" class="menu-svg">
+    </div>
+    <!-- Menu a tendina -->
+    <div class="dropdown-menu-custom" id="dropdownMenu" tabindex="-1" aria-label="Menu di navigazione">
+      <button class="dropdown-close" id="dropdownClose" aria-label="Chiudi menu">&times;</button>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Progetti</a></li>
+        <li><a href="#">Contatti</a></li>
+      </ul>
     </div>
 
 
@@ -237,5 +246,30 @@ Lo scopo era quello di progettare un oggetto ergonomico, leggero e adattabile, p
             </div>
         </div>
     </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuIcon = document.getElementById('menuIcon');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  const dropdownClose = document.getElementById('dropdownClose');
+
+  menuIcon.addEventListener('click', function() {
+    dropdownMenu.classList.add('open');
+    dropdownMenu.focus();
+  });
+
+  dropdownClose.addEventListener('click', function() {
+    dropdownMenu.classList.remove('open');
+    menuIcon.focus();
+  });
+
+  // Chiudi menu con ESC
+  dropdownMenu.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      dropdownMenu.classList.remove('open');
+      menuIcon.focus();
+    }
+  });
+});
+</script>
 </body>
 </html>

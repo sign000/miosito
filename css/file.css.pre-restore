@@ -1,64 +1,26 @@
+/* Ottimizzazione CSS: solo regole personalizzate non coperte da Bootstrap */
 
-/* ======= Mobile overrides (force last) ======= */
-@media (max-width: 480px) {
-    /* Sposta più in basso l'immagine progettoastoria su mobile */
-    body .progetto-fullwidth {
-        margin-top: 6rem !important;
-    }
-    /* Sposta più in basso titolo e descrizione Identità Visiva Astoria */
-    body .astoria-text,
-    body .astoria-descrizione {
-        transform: translateY(5.5rem) !important;
-        margin-top: 0 !important;
-    }
-    /* Sposta in giù il rettangolo grigio della sezione paraschiena */
-    body .paraschiena-section .rettangolo-grigio {
-        margin-top: 3.5rem !important;
-    }
-    /* Forza la posizione mobile del render paraschiena in fondo al file per massima priorità */
-    body .paraschiena-section .immagine-sovrapposta {
-        top: -35% !important;
-    }
-    /* Abbassa leggermente l'immagine del render paraschiena su mobile */
-    .paraschiena-section .immagine-sovrapposta {
-        top: -35% !important;
-    }
-    /* Ensure the vite image is slightly lower than earlier rules */
-    body .vite-section .immagine-sovrapposta {
-        top: 30% !important;
-    }
-
-    /* Bring the grey rectangle closer to the content */
-    body .rettangolo-grigio {
-        margin-top: 2.5rem !important;
-    }
-}
-
-/* Immagine fullwidth centrata e responsive */
-
+/* Immagine fullwidth */
 .img-fullwidth {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    min-width: 100vw !important;
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 100vw;
     display: block;
-    margin: 0 auto !important;
-    padding: 0;
-    object-fit: cover !important;
-    object-position: top !important;
-    height: 1800px !important;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: top;
+    height: 1800px;
 }
 
-/* ===========================
-   SIMPLE GREY FOOTER (full-width rectangle)
-   =========================== */
+/* Footer semplice */
 .site-footer {
     background: #e6e6e6;
     width: 100vw;
-    left: 50%;
     margin-left: -50vw;
+    left: 50%;
     position: relative;
-    margin-top: 10rem; /* aumentato: sposta il footer più in basso */
-    padding: 5rem 0;   /* aumentato: footer più alto per contenuti (icone/testi) */
+    margin-top: 10rem;
+    padding: 5rem 0;
     box-sizing: border-box;
 }
 .site-footer-inner {
@@ -66,113 +28,116 @@
     margin: 0 auto;
     padding: 0 1rem;
 }
-.site-footer .footer-text {
-    margin: 0;
-    color: #333;
-    font-family: 'delight', Arial, sans-serif;
-    font-weight: 300; /* light */
-    font-size: 1rem;
-    text-align: left;
-}
-
-/* Left column layout: stack items vertically and align to left */
-.site-footer .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center; /* centra verticalmente i testi all'interno della colonna */
-    text-align: left;
-    width: 100%;
-    max-width: none; /* allow Bootstrap columns to control width */
-}
-.site-footer .footer-contact {
-    font-family: 'delight', Arial, sans-serif;
-    font-weight: 300;
-    font-size: clamp(0.95rem, 1.2vw + 0.6rem, 1.25rem);
-    margin: 0 0 0.6rem 0;
-}
-.site-footer .footer-email {
-    margin: 0 0 0.5rem 0;
-    font-family: 'delight', Arial, sans-serif;
-    font-weight: 300; /* light */
-    /* responsive size: allow smaller minimum on very narrow viewports */
-    font-size: clamp(0.85rem, 2.2vw + 0.2rem, 1.9rem);
-    color: #111;
-}
-.site-footer .footer-email a {
-    color: inherit;
-    text-decoration: none;
-    font-weight: 300;
-}
-.site-footer .footer-email a:hover {
-    text-decoration: underline;
-}
-
-/* Footer icons (vertical stack on the right) */
 .footer-icons {
     display: flex;
     flex-direction: column;
-    gap: clamp(0.6rem, 1.2vw, 1.2rem);
-    align-items: flex-start; /* allineamento a sinistra per icone + etichette */
+    gap: 1rem;
+    align-items: flex-start;
 }
 .footer-icon-wrap {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: clamp(0.4rem, 0.8vw, 0.8rem);
+    gap: 0.5rem;
 }
-.footer-icon-wrap .icon-label {
-    font-family: 'delight', Arial, sans-serif;
-    font-weight: 300;
-    color: #333;
-    /* allow label text (email/phone) to scale smaller on tight viewports */
-    font-size: clamp(0.7rem, 1vw + 0.15rem, 1rem);
-}
-.footer-icons .footer-icon {
+.footer-icon {
     display: inline-flex;
-    width: clamp(34px, 4.2vw, 52px);
-    height: clamp(34px, 4.2vw, 52px);
-    min-width: 28px;
-    min-height: 28px;
+    width: 40px;
+    height: 40px;
     align-items: center;
     justify-content: center;
     color: #333;
     text-decoration: none;
 }
-.footer-icons .footer-icon:hover { color: #000; }
-.footer-icons svg { display: block; width: clamp(18px, 2.2vw, 28px); height: auto; }
-
-@media (max-width: 767px) {
-    /* keep icons vertical on small screens as well */
-    .footer-icons { flex-direction: column; gap: 1rem; justify-content: center; margin-top: 1rem; }
-    .col-md-1.d-none.d-md-block { display: none !important; }
+.footer-icon:hover { color: #000; }
+.footer-icon svg { width: 24px; height: auto; }
+.icon-label {
+    font-family: 'delight', Arial, sans-serif;
+    font-weight: 300;
+    color: #333;
+    font-size: 1rem;
 }
 
-/* Sposta la colonna icone più a sinistra sui dispositivi medi e superiori */
-@media (min-width: 768px) {
-    .site-footer .col-md-3 { padding-left: 0; }
-    /* Sposta le icone ancora più a destra sui dispositivi medi e superiori */
-    .site-footer .footer-icons { margin-left: 8rem !important; }
+/* Testi principali */
+.thunder-text, .progetti-text, .render-text, .vite-text, .puleggia-text, .astoria-text {
+    font-family: 'delight', Arial, sans-serif;
+    font-weight: 800;
+    color: #333;
+}
+.thunder-text { font-size: 6rem; margin: 1rem 0 2rem 0; }
+.progetti-text, .vite-text, .render-text, .puleggia-text, .astoria-text { font-size: 2.5rem; margin: 1rem 0 15px 0; }
+.bio-text, .progetto-descrizione, .vite-descrizione, .puleggia-descrizione, .astoria-descrizione, .contatti-info {
+    font-family: 'delight', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #000;
 }
 
-/* Slightly shift footer icons left between 768px and 991px */
-@media (min-width: 768px) and (max-width: 991px) {
-    .site-footer .footer-icons {
-        margin-left: 10rem !important; /* sposta ancora di più a destra sui tablet medi */
-    }
+/* Rettangolo grigio */
+.rettangolo-grigio {
+    background: #d3d3d3;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 20px;
+    margin: 8rem 0 2rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
 
-/* On medium+ screens make icons and their labels larger */
-@media (min-width: 768px) {
-    .site-footer .footer-icons {
-        gap: 1.25rem; /* a bit more breathing room */
-    }
-    .site-footer .footer-icons .footer-icon {
-        width: 64px;
-        height: 64px;
-        min-width: 48px;
-        min-height: 48px;
-    }
+/* Immagini sovrapposte */
+.immagine-sovrapposta {
+    max-width: 150%;
+    max-height: 150%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Logo e menu icone */
+.logo-as, .menu-icon {
+    position: fixed;
+    top: 8px;
+    z-index: 1000;
+}
+.logo-as { left: 15px; }
+.menu-icon { right: 5px; }
+.as-svg, .menu-svg { width: 25px; height: 25px; }
+
+/* Responsive principali */
+@media (max-width: 1200px) {
+    .img-fullwidth { height: 1400px; }
+}
+@media (max-width: 900px) {
+    .img-fullwidth { height: 1000px; }
+}
+@media (max-width: 600px) {
+    .img-fullwidth { height: 700px; }
+}
+@media (max-width: 480px) {
+    .thunder-text { font-size: 2.5rem; }
+    .progetti-text, .vite-text, .render-text, .puleggia-text, .astoria-text { font-size: 1.3rem; }
+    .bio-text, .progetto-descrizione, .vite-descrizione, .puleggia-descrizione, .astoria-descrizione { font-size: 0.9rem; }
+    .footer-icon { width: 32px; height: 32px; }
+    .footer-icon svg { width: 16px; }
+}
+
+/* Font-face */
+@font-face {
+    font-family: 'delight';
+    src: url('../fonts/delight-light.otf') format('opentype');
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thunder';
+    src: url('../fonts/Thunder-ExtraBoldLC.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
     .site-footer .footer-icons svg {
         width: 36px; /* icon graphic larger */
         height: auto;
@@ -573,79 +538,10 @@ body, html {
     top: 8px;
     right: 5px;
     z-index: 1000;
-    pointer-events: auto;
 }
 .menu-svg {
     width: 25px;
     height: 25px;
-}
-
-/* Dropdown menu custom */
-.dropdown-menu-custom {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 320px;
-    max-width: 90vw;
-    height: 100vh;
-    background: #fff;
-    box-shadow: -2px 0 24px rgba(0,0,0,0.13);
-    z-index: 2000;
-    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    animation: slideInMenu 0.25s cubic-bezier(.4,1.6,.6,1) both;
-}
-.dropdown-menu-custom.open {
-    display: flex;
-}
-.dropdown-menu-custom ul {
-    list-style: none;
-    padding: 0;
-    margin: 2.5rem 0 0 0;
-    width: 100%;
-}
-.dropdown-menu-custom li {
-    margin: 1.2rem 0;
-}
-.dropdown-menu-custom a {
-    font-family: 'delight', Arial, sans-serif;
-    font-size: 1.4rem;
-    color: #222;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-.dropdown-menu-custom a:hover {
-    color: #e74c3c;
-}
-.dropdown-close {
-    position: absolute;
-    top: 1.1rem;
-    right: 1.1rem;
-    background: none;
-    border: none;
-    font-size: 2.2rem;
-    color: #222;
-    cursor: pointer;
-    transition: color 0.2s;
-    z-index: 10;
-}
-.dropdown-close:hover {
-    color: #e74c3c;
-}
-@keyframes slideInMenu {
-    from { transform: translateX(100%); opacity: 0; }
-    to   { transform: translateX(0); opacity: 1; }
-}
-@media (max-width: 480px) {
-    .dropdown-menu-custom {
-        width: 95vw;
-        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
-    }
-    .dropdown-menu-custom a {
-        font-size: 1.1rem;
-    }
 }
 
 /* ===========================
@@ -722,34 +618,6 @@ body, html {
     position: absolute;
     
 }
-/* Reduce vertical gap between PROGETTI and following render text */
-.progetto-text.thunder-text {
-    margin-bottom: 0.15rem; /* tightened further per request */
-}
-
-.render-text {
-    margin-top: 0.05rem;
-}
-
-@media (min-width: 768px) {
-    .progetto-text.thunder-text {
-        margin-bottom: 0.45rem;
-    }
-    .render-text {
-        margin-top: 0.2rem;
-    }
-}
-
-/* Slightly shift PROGETTI left to align with 'Render Paraschiena' */
-.progetto-text.thunder-text {
-    margin-left: -0.25rem; /* nudge reduced to move slightly right */
-}
-
-@media (min-width: 768px) {
-    .progetto-text.thunder-text {
-        margin-left: -0.5rem; /* reduced desktop nudge */
-    }
-}
 
 /* ===========================
    13. MEDIA QUERIES
@@ -778,26 +646,6 @@ body, html {
         max-width: 25%;
         left: 5%;
         top: 80%;
-    }
-}
-
-/* Reduce vertical gap between Vite text and Paraschiena image on small screens */
-@media (max-width: 600px) {
-    .paraschiena-section .immagine-sovrapposta {
-        margin-bottom: 0.1rem !important;
-    }
-    .vite-section .vite-text {
-        margin-top: 0rem !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .paraschiena-section .immagine-sovrapposta {
-        margin-bottom: -0.15rem !important;
-    }
-    .vite-section .vite-text {
-        margin-top: -0.1rem !important;
-        font-size: 1.05rem !important; /* keep readability when moved closer */
     }
 }
 
@@ -1405,11 +1253,12 @@ html {
 }
 
 /* Solo l'immagine del paraschiena mantiene il posizionamento specifico */
-/* Solo l'immagine del paraschiena mantiene il posizionamento specifico */
 .paraschiena-section .immagine-sovrapposta {
     position: absolute !important;
     top: -45% !important;
 }
+
+/* L'immagine della vite DEVE AVERE position absolute per non influenzare il rettangolo */
 .vite-section .immagine-sovrapposta {
     position: absolute !important;
     top: 40% !important;
@@ -1522,15 +1371,13 @@ html {
     left: 0;
     width: 100vw;
     z-index: 999;
-    pointer-events: none;
 }
 
 .rectangle-svg {
     width: 100%;
-    height: 40px;
+    height: 40px; /* Altezza ridotta per mobile */
     display: block;
-    object-fit: cover;
-    pointer-events: none;
+    object-fit: cover; /* Mantiene le proporzioni */
 }
 
 /* Media queries per Rectangle 9 - dimensioni fisse per breakpoint */
@@ -1915,6 +1762,35 @@ html {
     }
 }
 
+<<<<<<< Updated upstream
+/* (contact-related rules and conflict markers removed) */
+=======
+/* Regole per posizionare la scritta 'contact' poco sopra il footer */
+.contact-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* posiziona il contenuto in basso */
+    align-items: center;
+    min-height: 50vh !important;
+    padding-bottom: 0 !important; /* zero spazio tra testo e footer */
+}
+.contact-copy {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important; /* tocca il footer */
+    transform: none !important;
+}
+
+@media (max-width: 768px) {
+    .contact-row {
+        min-height: 45vh !important;
+        padding-bottom: 0 !important;
+    }
+    .contact-copy {
+        transform: none !important;
+        margin-bottom: 0 !important;
+        font-size: 2.5rem !important;
+    }
+}
 
 @media (max-width: 480px) {
     .contact-row {
@@ -2003,6 +1879,7 @@ html {
 }
 
 /* Stili per Rectangle 5 sovrapposta al rettangolo grigio */
+>>>>>>> Stashed changes
 .rettangolo-fullwidth {
     position: relative;
     display: flex;
@@ -2079,12 +1956,6 @@ html {
 
 /* --- Sezioni verticali --- */
 .vite-section { margin-top: 13rem; }
-
-/* Aumenta lo spazio tra biografia e render su desktop grandi */
-@media (min-width: 1200px) {
-    .bio-text { margin-bottom: 8rem !important; }
-    .render-text { margin-top: 4rem !important; }
-}
 .nuovo-rettangolo-section { margin-top: 15rem; }
 
 /* --- Vite section allineamento --- */
@@ -2125,79 +1996,5 @@ html {
     .nuovo-rettangolo-section .immagine-sovrapposta { max-width: 130% !important; max-height: 130% !important; width: 130% !important; }
 }
 
-/* ===========================
-   14. ASTORIA MOBILE ADJUSTMENTS
-   Move Astoria title + description + images up on small screens
-   Only affects viewports <= 767px
-   =========================== */
-@media (max-width: 767px) {
-    /* Move title/description block up */
-    .astoria-text,
-    .astoria-descrizione,
-    .astoria-text-block {
-        transform: translateY(3rem) !important; /* sposto il blocco ancora più in basso su mobile */
-        margin-top: 0 !important;
-    }
 
-    /* Raise Astoria images so layout stays aligned (keeps original proportions) */
-    .astoria-image,
-    .astoria-image-2,
-    .contact-img-astoriaaa,
-    .contact-img-astoriaaaa {
-        top: 72vh !important; /* abbasso ulteriormente le immagini su mobile */
-    }
 
-    /* Sposta più in su gli elementi della Puleggia Dentata su mobile */
-    /* Sposta gli elementi della Puleggia Dentata un po' più in giù su mobile */
-    .nuovo-rettangolo-section {
-        margin-top: 4rem !important; /* aumenta lo spazio sopra la sezione */
-    }
-
-    .nuovo-rettangolo-section .rettangolo-grigio {
-        margin-top: 3rem !important; /* allontana il rettangolo dai testi */
-    }
-
-    .nuovo-rettangolo-section .immagine-sovrapposta {
-        top: 40% !important; /* sposta l'immagine più in basso */
-        transform: translate(-50%, -50%) !important; /* centratura standard */
-    }
-
-    .puleggia-text,
-    .puleggia-descrizione {
-        transform: translateY(1.5rem) !important; /* sposta il testo verso il basso */
-    }
-
-    /* Forza l'immagine full-width del progetto Astoria più in basso su mobile */
-    .progetto-fullwidth {
-        margin-top: 4rem !important;
-    }
-}
-
-/* ===========================
-   VITE - Small screens adjustments
-   Move Vite title + description + image up on very small screens
-   Applies only to viewports <= 480px
-   =========================== */
-@media (max-width: 480px) {
-    /* Reduce the top spacing so the whole block moves up */
-    .vite-section {
-        margin-top: 8.5rem !important; /* leggero spostamento più in basso rispetto al valore precedente */
-    }
-
-    /* Adjust only the texts (title + description) to move them slightly down; image left unchanged */
-    .vite-section .vite-text,
-    .vite-section .vite-descrizione {
-        transform: translateY(0.6rem) !important; /* sposta il testo un pelo più in basso */
-        margin-top: 0 !important;
-    }
-
-    /* Move the image slightly up to match text */
-    .vite-section .immagine-sovrapposta {
-        top: 30% !important; /* sposto l'immagine più in giù sui piccoli schermi */
-        transform: translate(-50%, -50%) !important;
-    }
-    /* Avvicina il rettangolo grigio al contenuto su piccoli schermi */
-    .rettangolo-grigio {
-        margin-top: 2.5rem !important; /* più spazio sopra il rettangolo, lo sposta più in giù */
-    }
-}
