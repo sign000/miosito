@@ -48,6 +48,16 @@
     height: 1800px !important;
 }
 
+/* Classe per immagini centrate che occupano 8 colonne su md+ */
+.montagna-img-8 {
+    margin-top: 1rem;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* ===========================
    SIMPLE GREY FOOTER (full-width rectangle)
    =========================== */
@@ -574,10 +584,17 @@ body, html {
     right: 5px;
     z-index: 1000;
     pointer-events: auto;
+    transition: transform 150ms ease; /* smooth hover scale */
+    transform-origin: center center;
 }
 .menu-svg {
     width: 25px;
     height: 25px;
+}
+
+/* Small scale-up on hover — does not change position */
+.menu-icon:hover {
+    transform: scale(1.08);
 }
 
 /* Dropdown menu custom */
@@ -727,6 +744,11 @@ body, html {
     margin-bottom: 0.15rem; /* tightened further per request */
 }
 
+/* Aumenta lo spazio sopra la scritta "Progetti" per separarla dall'immagine precedente */
+.progetto-text.thunder-text {
+    margin-top: 3.5rem; /* default spacing between image and heading */
+}
+
 .render-text {
     margin-top: 0.05rem;
 }
@@ -737,6 +759,9 @@ body, html {
     }
     .render-text {
         margin-top: 0.2rem;
+    }
+    .progetto-text.thunder-text {
+        margin-top: 6rem; /* larger spacing on md+ screens */
     }
 }
 
