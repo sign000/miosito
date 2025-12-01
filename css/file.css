@@ -58,6 +58,109 @@
     margin-right: auto;
 }
 
+/* Stile per immagine SIGNOROTTI_CIMA (6 colonne) */
+.signorotti-img {
+    margin-top: 5.5rem;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.signorotti-section {
+    margin-top: 5rem; /* spazio tra progettoastoria e questa sezione */
+}
+
+/* Mobile: poni il testo sopra l'immagine e centra l'immagine (<=767px) */
+@media (max-width: 767.98px) {
+    .signorotti-section .row {
+        flex-direction: column-reverse; /* inverte ordine: testo sopra immagine */
+        align-items: center;
+    }
+    .signorotti-section .col-12 {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+    }
+    /* Forza il testo a 10 colonne su mobile e conserva l'offset a sinistra */
+    .signorotti-section .col-10 {
+        width: 83.33333333% !important;
+        max-width: 83.33333333% !important;
+    }
+    .signorotti-section .col-8 {
+        width: 66.66666667% !important; /* assicura 8 colonne */
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .signorotti-img {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4rem !important; /* ridotto su mobile */
+    }
+}
+
+/* Desktop: mantieni immagine 6 colonne e testo a destra */
+@media (min-width: 768px) {
+    .signorotti-section .col-1.d-none.d-md-block { display: block !important; }
+    /* Forza layout orizzontale su desktop e assegna larghezze esplicite */
+    /* Forza layout orizzontale su desktop: no wrap e piccolo gap */
+    .signorotti-section .row {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 1rem;
+        align-items: center;
+    }
+    /* Riduco leggermente le larghezze per compensare il gap e i padding interni */
+    .signorotti-section .col-md-6 {
+        flex: 0 0 auto !important;
+        width: calc(50% - 0.5rem) !important;
+        max-width: calc(50% - 0.5rem) !important;
+    }
+    .signorotti-section .col-md-4 {
+        flex: 0 0 auto !important;
+        width: calc(33.33333333% - 0.5rem) !important;
+        max-width: calc(33.33333333% - 0.5rem) !important;
+    }
+    /* Sposta il testo più verso l'interno (sinistra) e leggermente più in basso su desktop */
+    .signorotti-section .col-md-4 {
+        /* riduco il padding sinistro e applico un piccolo offset verso sinistra */
+        padding-left: 0.75rem !important;
+        margin-left: -1rem !important;
+        margin-top: 8rem !important;
+        align-items: flex-start !important;
+    }
+}
+
+/* Tipografia e layout testo per la sezione SIGNOROTTI */
+.signorotti-text {
+    font-family: 'delight', Arial, sans-serif;
+    font-weight: 300;
+    font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+    line-height: 1.6;
+    color: #111;
+    margin: 0;
+    padding: 0.5rem 0.5rem;
+}
+
+/* Riduci l'interlinea del titolo inline "Manifesto Espansione Urbana" dentro il paragrafo */
+.signorotti-text .astoria-text-inline {
+    line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+    /* Allinea verticalmente il testo rispetto all'immagine su desktop */
+    .signorotti-section .col-md-4 {
+        display: flex;
+        align-items: center;
+        padding-left: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    /* Su mobile lascia il testo sopra l'immagine con un po' di spazio */
+    .signorotti-text { margin-top: 2.5rem; margin-bottom: 1rem; padding: 0 1rem; }
+}
+
 /* ===========================
    SIMPLE GREY FOOTER (full-width rectangle)
    =========================== */
@@ -319,8 +422,18 @@ html {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-top: 15px;
-    margin-bottom: 4rem;
-    color: #000000;
+}
+.signorotti-text .astoria-text-inline {
+    display: block;
+    line-height: 1.15;
+    margin-bottom: 1rem; /* spazio tra il titolo inline e il paragrafo */
+}
+
+@media (min-width: 768px) {
+    /* su desktop lascia più respiro tra titolo e testo */
+    .signorotti-text .astoria-text-inline {
+        margin-bottom: -0.2rem;
+    }
 }
 .progetti-text {
     font-family: 'delight', 'Arial', sans-serif;
