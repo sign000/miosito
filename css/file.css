@@ -699,6 +699,7 @@ body, html {
     pointer-events: auto;
     transition: transform 150ms ease; /* smooth hover scale */
     transform-origin: center center;
+    transform: translateX(-6px); /* sposta leggermente a sinistra senza cambiare 'right' */
 }
 .menu-svg {
     width: 25px;
@@ -707,7 +708,7 @@ body, html {
 
 /* Small scale-up on hover — does not change position */
 .menu-icon:hover {
-    transform: scale(1.08);
+    transform: translateX(-6px) scale(1.08);
 }
 
 /* Dropdown menu custom */
