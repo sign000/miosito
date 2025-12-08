@@ -1,3 +1,6 @@
+#biografia {
+  scroll-margin-top: 40px;
+}
 
 /* ======= Mobile overrides (force last) ======= */
 @media (max-width: 480px) {
@@ -96,6 +99,12 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 4rem !important; /* ridotto su mobile */
+    }
+
+    /* Riduci lo spazio tra il titolo inline e la descrizione per schermi piccoli */
+    .signorotti-text .astoria-text-inline {
+        margin-bottom: 0.35rem !important;
+        line-height: 1.05 !important;
     }
 }
 
@@ -443,46 +452,22 @@ html {
     margin-bottom: 15px;
     color: #333333f6;
 }
-.render-text {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 2.5rem;
-    margin-top: 2rem;
-    margin-bottom: 15px;
-    color: #333333f6;
+/* Dimensione uniforme per tutti i sottotitoli */
+.render-text,
+.vite-text,
+.puleggia-text,
+.astoria-text,
+.astoria-text-inline {
+    font-size: 2.2rem !important;
 }
-.vite-text {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 2.5rem;
-    margin-top: 1rem;
-    margin-bottom: 15px;
-    color: #333333f6;
-}
-.puleggia-text {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 2.5rem;
-    margin-top: 1rem;
-    margin-bottom: 15px;
-    color: #333333f6;
-}
-.astoria-text {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 2.5rem;
-    margin-top: 13rem;
-    margin-bottom: 15px;
-    color: #333333f6;
-}
-.progetto-descrizione {
-    font-family: 'delight', 'Arial', sans-serif;
-    font-weight: lighter;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-top: 10px;
-    margin-bottom: 2rem;
-    color: #000000;
+@media (max-width: 480px) {
+    .render-text,
+    .vite-text,
+    .puleggia-text,
+    .astoria-text,
+    .astoria-text-inline {
+        font-size: 1.3rem !important;
+    }
 }
 .vite-descrizione {
     font-family: 'delight', 'Arial', sans-serif;
@@ -694,7 +679,7 @@ body, html {
 .menu-icon {
     position: fixed;
     top: 8px;
-    right: 5px;
+    right: 13px;
     z-index: 1000;
     pointer-events: auto;
     transition: transform 150ms ease; /* smooth hover scale */
@@ -988,9 +973,9 @@ body, html {
 
 /* --- Menu Icon Responsive --- */
 @media (min-width: 480px) { .menu-svg { width: 28px; height: 28px; } }
-@media (min-width: 768px) { .menu-icon { top: 10px; right: 25px; } .menu-svg { width: 32px; height: 32px; } }
-@media (min-width: 1024px) { .menu-icon { top: 12px; right: 40px; } .menu-svg { width: 35px; height: 35px; } }
-@media (min-width: 1200px) { .menu-icon { top: 15px; right: 45px; } .menu-svg { width: 38px; height: 38px; } }
+@media (min-width: 768px) { .menu-icon { top: 10px; right: 15px; } .menu-svg { width: 32px; height: 32px; } }
+@media (min-width: 1024px) { .menu-icon { top: 12px; right: 30px; } .menu-svg { width: 35px; height: 35px; } }
+@media (min-width: 1200px) { .menu-icon { top: 15px; right: 35px; } .menu-svg { width: 38px; height: 38px; } }
 
 /* --- Rettangolo Fullwidth Responsive --- */
 @media (min-width: 992px) {
@@ -1775,7 +1760,7 @@ html {
 @media (min-width: 768px) {
     .menu-icon {
         top: 10px; /* Stesso top dell'icona AS */
-        right: 25px; /* Spostato ancora più a destra */
+        right: 10px; /* Spostato ancora più a sinistra su desktop */
     }
     
     .menu-svg {
@@ -1787,7 +1772,7 @@ html {
 @media (min-width: 1024px) {
     .menu-icon {
         top: 12px;
-        right: 40px; /* Spostato ancora più a destra */
+        right: 26px; /* Spostato ancora più a sinistra su desktop */
     }
     
     .menu-svg {
@@ -1799,7 +1784,7 @@ html {
 @media (min-width: 1200px) {
     .menu-icon {
         top: 15px;
-        right: 45px; /* Spostato ancora più a destra */
+        right: 31px; /* Spostato ancora più a sinistra su desktop */
     }
     
     .menu-svg {
@@ -2221,8 +2206,8 @@ html {
 
 /* Aumenta lo spazio tra biografia e render su desktop grandi */
 @media (min-width: 1200px) {
-    .bio-text { margin-bottom: 8rem !important; }
-    .render-text { margin-top: 4rem !important; }
+    .bio-text { margin-bottom: 4rem !important; }
+    .render-text { margin-top: 7rem !important; margin-bottom: 3rem !important; }
 }
 .nuovo-rettangolo-section { margin-top: 15rem; }
 
@@ -2338,5 +2323,27 @@ html {
     /* Avvicina il rettangolo grigio al contenuto su piccoli schermi */
     .rettangolo-grigio {
         margin-top: 2.5rem !important; /* più spazio sopra il rettangolo, lo sposta più in giù */
+    }
+}
+
+/* Final override: increase spacing under 'Render Paraschiena' title globally */
+.render-text {
+    margin-bottom: 2.2rem !important;
+}
+
+/* Riduci lo spazio sotto "Manifesto Espansione Urbana" sui telefoni (<=480px) */
+@media (max-width: 480px) {
+    .signorotti-section .signorotti-text .astoria-text-inline,
+    .signorotti-text .astoria-text-inline {
+        margin-bottom: -0.5rem !important;
+        line-height: 1.2 !important;
+        display: block; /* assicurati che occupi la riga e che margin-bottom abbia effetto */
+    }
+}
+
+/* Riduci lo spazio sotto "Render Paraschiena" sui desktop (>=768px) */
+@media (min-width: 768px) {
+    .render-text {
+        margin-bottom: 0.1rem !important;
     }
 }
