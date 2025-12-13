@@ -1,4 +1,47 @@
-#biografia {
+/* Frecce carosello Bootstrap più grandi */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 48px;
+  height: 48px;
+  background-size: 100% 100%;
+  filter: brightness(0) invert(1);
+  opacity: 1 !important;
+  transition: transform 0.2s ease;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  transform: scale(1.3);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: auto;
+  padding: 10px;
+  opacity: 1 !important;
+}
+
+#biografia {/* Carosello immagini */
+.carosello-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+
+
+
+/* Evita che le immagini del carosello ereditino queste regole */
+.carosello-wrapper img:not(.carosello-img-item) {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
   scroll-margin-top: 40px;
 }
 
