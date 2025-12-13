@@ -54,7 +54,7 @@
         <div class="row">
             <div class="col-1 col-md-3"></div>
             <div class="col-10 col-md-7">
-                <p class="bio-text animate__animated" id="testoBio">Mi chiamo Alessio Signorotti, ho 21 anni e sono originario di Rimini.
+                <p class="bio-text" id="testoBio">Mi chiamo Alessio Signorotti, ho 21 anni e sono originario di Rimini.
 Il mio percorso è interamente focalizzato sul design, un campo che mi permette di esplorare l'equilibrio tra visione creativa e utilità concreta. I miei principali ambiti di studio e applicazione sono il Graphic Design e il Product Design. Attraverso questi due discipline, lavoro per sviluppare soluzioni che non solo siano esteticamente valide, ma che soddisfino in modo efficace e funzionale le esigenze del progetto e dell'utente finale.<br>
                <br>
 <span style="font-weight: 800; color: #333333f6;">Passioni e Benessere:</span><br>
@@ -330,14 +330,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Funzione per attivare le animazioni
   function attivaAnimazioni() {
     titoloHello.classList.remove('animate__bounceInLeft');
-    testoBio.classList.remove('animate__bounceInRight');
-    
     // Forzo reflow
     void titoloHello.offsetWidth;
-    void testoBio.offsetWidth;
     
     titoloHello.classList.add('animate__bounceInLeft');
-    testoBio.classList.add('animate__bounceInRight');
   }
 
   // Intersection Observer per attivare animazioni quando gli elementi sono visibili
