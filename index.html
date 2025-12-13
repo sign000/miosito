@@ -57,7 +57,7 @@
                 <p class="bio-text animate__animated" id="testoBio">Mi chiamo Alessio Signorotti, ho 21 anni e sono originario di Rimini.
 Il mio percorso è interamente focalizzato sul design, un campo che mi permette di esplorare l'equilibrio tra visione creativa e utilità concreta. I miei principali ambiti di studio e applicazione sono il Graphic Design e il Product Design. Attraverso questi due discipline, lavoro per sviluppare soluzioni che non solo siano esteticamente valide, ma che soddisfino in modo efficace e funzionale le esigenze del progetto e dell'utente finale.<br>
                <br>
-Passioni e Benessere:<br>
+<span style="font-weight: 800; color: #333333f6;">Passioni e Benessere:</span><br>
 Al di fuori del mondo digitale e della progettazione, coltivo uno stile di vita che pone l'accento sul benessere fisico e mentale. Sono un grande appassionato di sport in generale e attualmente dedico una parte significativa del mio tempo al fitness. Frequento la palestra 4 o 5 volte a settimana, una routine che vedo come essenziale non solo per la forma fisica, ma anche per la disciplina e la chiarezza mentale che essa comporta. Questa attenzione al corpo si estende all'alimentazione e all'integrazione.<br>
 Quando cerco una connessione più profonda e un cambio di scenario, mi dirigo verso la montagna. L'amore per la natura e per l'avventura mi porta a fare trekking e a organizzare nottate in tenda con gli amici. Questi momenti all'aria aperta non sono solo un'occasione di svago, ma rappresentano anche una pausa rigenerante, un modo per divertirmi e ricaricare le energie.</p>
             </div>
@@ -95,16 +95,16 @@ Quando cerco una connessione più profonda e un cambio di scenario, mi dirigo ve
                 </div>
         </div>
     </div>
-<div class="container-fluid" id="progetti"
->
-        <div class="row">
-            <div class="col-1 col-sm-1"></div>
-            <div class="col-10 col-md-7">
-                <p class="progetto-text thunder-text">
-                    Progetti
-                </p>
-            </div>
-
+<div class="container-fluid" id="progetti">
+    <div class="row">
+        <div class="col-1 col-sm-1"></div>
+        <div class="col-10 col-md-7">
+            <p class="progetto-text thunder-text animate__animated animate__bounceInLeft">
+                Progetti
+            </p>
+        </div>
+        <div class="col-1 col-sm-4"></div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-1"></div>
@@ -306,6 +306,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const titoloHello = document.getElementById('titoloHello');
   const testoBio = document.getElementById('testoBio');
   const menuLinks = dropdownMenu.querySelectorAll('a');
+  // const scrittaProgetti = document.getElementById('scrittaProgetti');
+  // const progettiLink = document.querySelector('a[href="#progetti"]');
 
   menuIcon.addEventListener('click', function() {
     dropdownMenu.classList.add('open');
@@ -345,18 +347,30 @@ document.addEventListener('DOMContentLoaded', function() {
     threshold: 0.3 // 30% dell'elemento deve essere visibile
   };
 
+  // Observer per biografia
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
-        // L'elemento è entrato nel viewport
         attivaAnimazioni();
       }
     });
   }, observerOptions);
 
-  // Osservo la sezione biografia
   const biografiaSection = document.getElementById('biografia');
   observer.observe(biografiaSection);
+
+  // Observer per scritta Progetti
+  // const observerProgetti = new IntersectionObserver(function(entries) {
+  //   entries.forEach(function(entry) {
+  //     if (entry.isIntersecting) {
+  //       scrittaProgetti.classList.remove('animate__bounceInLeft');
+  //       void scrittaProgetti.offsetWidth;
+  //       scrittaProgetti.classList.add('animate__bounceInLeft');
+  //     }
+  //   });
+  // }, observerOptions);
+
+  // observerProgetti.observe(scrittaProgetti);
 
   // Chiudi menu al click su qualsiasi link del menu
   menuLinks.forEach(function(link) {
@@ -364,6 +378,20 @@ document.addEventListener('DOMContentLoaded', function() {
       dropdownMenu.classList.remove('open');
     });
   });
+
+  // Animazione su click "Progetti" dal menu
+  // if (progettiLink) {
+  //   progettiLink.addEventListener('click', function(e) {
+  //     setTimeout(function() {
+  //       document.getElementById('progetti').scrollIntoView({ behavior: 'smooth' });
+  //       setTimeout(function() {
+  //         scrittaProgetti.classList.remove('animate__bounceInLeft');
+  //         void scrittaProgetti.offsetWidth;
+  //         scrittaProgetti.classList.add('animate__bounceInLeft');
+  //       }, 300);
+  //     }, 100);
+  //   });
+  // }
 
   // Animazioni al click su "Chi sono"
   chiSonoLink.addEventListener('click', function(e) {

@@ -1,4 +1,15 @@
-/* Frecce carosello Bootstrap più grandi */
+/* Frecce carosello Bootstrap più grandi *//* Frecce carosello più piccole su mobile */
+@media (max-width: 576px) {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    min-width: 1.5rem !important;
+    min-height: 1.5rem !important;
+    background-size: 1.5rem 1.5rem !important;
+  }
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   width: 48px;
@@ -19,6 +30,19 @@
   width: auto;
   padding: 10px;
   opacity: 1 !important;
+}
+
+/* Stile Delight Bold */
+.delight-bold {
+  font-family: 'delight', Arial, sans-serif;
+  font-weight: 800;
+  color: #333333f6;
+}
+
+/* Assicura che il titolo Progetti sia visibile prima dell'animazione */
+#titoloProgetti {
+  visibility: visible;
+  opacity: 1;
 }
 
 #biografia {/* Carosello immagini */
