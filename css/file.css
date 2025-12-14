@@ -115,7 +115,7 @@
     padding: 0;
     object-fit: cover !important;
     object-position: top !important;
-    height: 1800px !important;
+    height: 1100px !important;
 }
 
 /* Classe per immagini centrate che occupano 8 colonne su md+ */
@@ -414,17 +414,17 @@
 
 @media (max-width: 1200px) {
     .img-fullwidth {
-        height: 1400px !important;
+        height: 900px !important;
     }
 }
 @media (max-width: 900px) {
     .img-fullwidth {
-        height: 1000px !important;
+        height: 650px !important;
     }
 }
 @media (max-width: 600px) {
     .img-fullwidth {
-        height: 700px !important;
+        height: 400px !important;
     }
 }
 
@@ -823,7 +823,7 @@ body, html {
 }
 @media (max-width: 480px) {
     .dropdown-menu-custom {
-        width: 95vw;
+        width: 50vw;
         padding: 1.2rem 0.5rem 1.5rem 0.5rem;
     }
     .dropdown-menu-custom a {
