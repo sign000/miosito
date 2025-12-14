@@ -142,6 +142,9 @@
 
 /* Mobile: poni il testo sopra l'immagine e centra l'immagine (<=767px) */
 @media (max-width: 767.98px) {
+    .signorotti-section {
+        margin-top: 2rem !important; /* sposta la sezione più in alto su mobile */
+    }
     .signorotti-section .row {
         flex-direction: column-reverse; /* inverte ordine: testo sopra immagine */
         align-items: center;
@@ -797,10 +800,13 @@ body, html {
     font-size: 1.4rem;
     color: #222;
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease;
+    display: inline-block;
 }
 .dropdown-menu-custom a:hover {
     color: #e74c3c;
+    transform: translateX(8px);
+    letter-spacing: 1px;
 }
 .dropdown-close {
     position: absolute;
@@ -811,11 +817,12 @@ body, html {
     font-size: 2.2rem;
     color: #222;
     cursor: pointer;
-    transition: color 0.2s;
+    transition: color 0.3s ease, transform 0.3s ease;
     z-index: 10;
 }
 .dropdown-close:hover {
     color: #e74c3c;
+    transform: rotate(90deg) scale(1.2);
 }
 @keyframes slideInMenu {
     from { transform: translateX(100%); opacity: 0; }
@@ -878,6 +885,12 @@ body, html {
     position: static;
     z-index: 10;
 }
+
+/* Sposta la sezione paraschiena più in basso */
+.paraschiena-section {
+    margin-top: 3rem;
+}
+
 .paraschiena-section .immagine-sovrapposta {
     position: absolute !important;
     top: -45% !important;
@@ -907,22 +920,22 @@ body, html {
 }
 /* Reduce vertical gap between PROGETTI and following render text */
 .progetto-text.thunder-text {
-    margin-bottom: 0.15rem; /* tightened further per request */
-}
-
-/* Aumenta lo spazio sopra la scritta "Progetti" per separarla dall'immagine precedente */
-.progetto-text.thunder-text {
-    margin-top: 3.5rem; /* default spacing between image and heading */
+    margin-bottom: 0.05rem !important;
+    margin-top: 2.2rem !important;
 }
 
 .render-text {
-    margin-top: 0.05rem;
+    margin-top: 0.05rem !important;
+    margin-bottom: 0.7rem !important;
 }
 
-@media (min-width: 768px) {
-    .progetto-text.thunder-text {
-        margin-bottom: 0.45rem;
-    }
+.progetto-descrizione,
+.vite-descrizione,
+.puleggia-descrizione {
+    margin-top: 0.2rem !important;
+    margin-bottom: 1.1rem !important;
+}
+
     .render-text {
         margin-top: 0.2rem;
     }
@@ -1354,6 +1367,13 @@ html {
     color: #000000;
 }
 
+/* Sposta la sezione Astoria più in basso su desktop */
+@media (min-width: 768px) {
+    .astoria-descrizione {
+        margin-top: 10rem;
+    }
+}
+
 /* RESPONSIVE TYPOGRAPHY - Media Queries per ridimensionare i testi */
 
 /* Tablet grandi (769px - 1024px) - Riduzione moderata */
@@ -1564,6 +1584,13 @@ html {
 /* Sposta tutta la sezione vite più in basso - FUORI dalla media query per tutti i dispositivi */
 .vite-section {
     margin-top: 13rem;
+}
+
+/* Riduce margin-top della sezione vite su mobile */
+@media (max-width: 767px) {
+    .vite-section {
+        margin-top: 2rem !important;
+    }
 }
 
 /* Sposta la nuova sezione rettangolo più in basso */
@@ -2071,26 +2098,20 @@ html {
     .vite-section .vite-descrizione { font-size: 1rem !important; }
 }
 @media (max-width: 480px) {
-    .thunder-text { font-size: 2.5rem !important; }
-    .progetti-text, .vite-text, .render-text, .puleggia-text, .astoria-text { font-size: 1.3rem !important; }
-    .bio-text, .progetto-descrizione, .vite-descrizione, .puleggia-descrizione, .astoria-descrizione { font-size: 0.9rem !important; }
-    .vite-section .vite-descrizione { font-size: 0.9rem !important; }
-}
-
-/* --- Desktop grandi --- */
-@media (min-width: 1024px) {
-    .progetto-descrizione { margin-top: 9px !important; }
-    .vite-descrizione { margin-top: 9px !important; font-family: 'delight' !important; font-weight: lighter !important; }
-    .render-text { margin-bottom: 0.1rem !important; }
-    .vite-text { margin-bottom: 0.1rem !important; }
-}
-
-/* --- Tablet/Desktop piccoli --- */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .progetto-descrizione { margin-top: -0.8rem !important; }
-    .vite-descrizione { margin-top: -0.8rem !important; font-family: 'delight' !important; font-weight: lighter !important; }
-    .render-text { margin-bottom: 0.1rem !important; }
-    .vite-text { margin-bottom: 0.1rem !important; }
+    .vite-section {
+        margin-top: 2rem !important;
+    }
+    .vite-section .vite-descrizione {
+        transform: translateY(0.6rem) !important;
+        margin-top: 0 !important;
+    }
+    .vite-section .immagine-sovrapposta {
+        top: 30% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+    .rettangolo-grigio {
+        margin-top: 2.5rem !important;
+    }
 }
 
 /* --- Distanza proporzionale per tablet --- */
@@ -2271,6 +2292,11 @@ html {
 /* --- Sezioni verticali --- */
 .vite-section { margin-top: 13rem; }
 
+/* Riduce margin-top della sezione vite su mobile */
+@media (max-width: 767px) {
+    .vite-section { margin-top: 2rem !important; }
+}
+
 /* Aumenta lo spazio tra biografia e render su desktop grandi */
 @media (min-width: 1200px) {
     .bio-text { margin-bottom: 4rem !important; }
@@ -2339,9 +2365,8 @@ html {
     }
 
     /* Sposta più in su gli elementi della Puleggia Dentata su mobile */
-    /* Sposta gli elementi della Puleggia Dentata un po' più in giù su mobile */
     .nuovo-rettangolo-section {
-        margin-top: 4rem !important; /* aumenta lo spazio sopra la sezione */
+        margin-top: 1rem !important; /* sposta la sezione più in alto */
     }
 
     .nuovo-rettangolo-section .rettangolo-grigio {
@@ -2372,7 +2397,7 @@ html {
 @media (max-width: 480px) {
     /* Reduce the top spacing so the whole block moves up */
     .vite-section {
-        margin-top: 8.5rem !important; /* leggero spostamento più in basso rispetto al valore precedente */
+        margin-top: 2rem !important; /* sezione più in alto su mobile */
     }
 
     /* Adjust only the texts (title + description) to move them slightly down; image left unchanged */
@@ -2412,5 +2437,9 @@ html {
 @media (min-width: 768px) {
     .render-text {
         margin-bottom: 0.1rem !important;
+    }
+    /* Sposta il titolo Progetti più in basso su desktop */
+    .progetto-text.thunder-text {
+        margin-top: 8rem !important;
     }
 }
